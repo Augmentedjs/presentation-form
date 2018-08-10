@@ -1,0 +1,517 @@
+<!-- start:source.tmpl.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+		<title>autoForm.js</title>
+		<link rel="icon" type="image/png" href="favicon.png"/>
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="css/prism.min.css">
+		<link type="text/css" rel="stylesheet" href="css/template.min.css">
+			<style>
+				.page-header,
+				pre.code-toolbar > .toolbar:hover {
+					background-color: #607D8B;
+				}
+				.callout-primary,
+				.toc .nav > li > a:hover,
+				.toc .nav > li > a:focus,
+				.toc .nav > li.active > a,
+				.toc .nav > li.active > a:hover,
+				.toc .nav > li.active > a:focus,
+				pre.code-toolbar > .toolbar:hover {
+					border-left-color: #607D8B;
+				}
+				pre.code-toolbar > .toolbar:hover {
+					border-bottom-color: #607D8B;
+				}
+				.callout-primary h5,
+				.symbol-title.collapsible-symbol .toggle-icon,
+				.breadcrumb li a,
+				.toc .nav > li > a:hover,
+				.toc .nav > li > a:focus,
+				.toc .nav > li.active > a,
+				.toc .nav > li.active > a:hover,
+				.toc .nav > li.active > a:focus {
+					color: #607D8B;
+				}
+			</style>
+		<script type="text/javascript">
+			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"ddd MMM Do YYYY","systemName":"Augmented.js Next Presentation","systemSummary":"Augmented.js Next Presentation - Simply Development.","systemLogo":"img/jensen-silo-circle-small.png","systemColor":"#607D8B","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"<a href='http://www.augmentedjs.com'>Augmented.js Homepage</a>","copyright":"","linenums":true,"collapseSymbols":false,"inverseNav":true,"inlineNav":false,"outputSourceFiles":true,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":true,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":false,"sort":"linenum, longname, version, since","search":true,"favicon":"favicon.png","stylesheets":[],"scripts":[],"monospaceLinks":false,"cleverLinks":false,"logoFile":"public/images/jensen-silo-circle-small.png","navType":"vertical","protocol":"html://"};
+			window.DOCLET_TOC_ENABLED = false;
+			window.DOCLET_AFILTER_ENABLED = false;
+		</script>
+</head>
+<body>
+	<!-- start:navbar.hbs -->
+	<header class="navbar navbar-default navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand branding-logo" href="index.html" style="background-image: url(img/jensen-silo-circle-small.png);">
+					Augmented.js Next Presentation
+				</a>
+				<!-- displayed on small devices -->
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse" id="topNavigation">
+				<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Globals<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="global.html#display">display</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="list_class.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="Presentation.Component.AutomaticForm.html">Presentation.Component.AutomaticForm</a></li>
+									</ul>
+								</li>
+				</ul>
+					<!-- start:lunr-search-navbar.hbs -->
+					<form class="navbar-form navbar-right" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search" id="lunr-search-input">
+							<div class="input-group-btn">
+								<button class="btn btn-default" id="lunr-search-submit">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+					<!-- start:lunr-search-navbar.hbs -->		</div>
+		</div>
+	</header>
+	<!-- end:navbar.hbs -->		<div class="page-header">
+			<div class="container">
+				<span class="kind">source</span>
+				<h1><span class="name">autoForm.js</span></h1>
+			</div>
+		</div>
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-12 main-content">
+		<section class="source-section">
+			<article></article>
+			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">import * as Augmented from "augmentedjs-next";
+import { DecoratorView } from "presentation-decorator";
+import { request } from "presentation-request";
+import { Model } from "presentation-models";
+import Dom from "presentation-dom";
+import formCompile from "./functions/buildForm.js";
+import formatValidationMessages from "./functions/messages.js";
+
+/**
+* A automatic form view created from a JSON Schema
+* @memberof Presentation.Component
+* @extends Presentation.DecoratorView
+*/
+class AutomaticForm extends DecoratorView {
+  constructor(options) {
+    super(options);
+    this.crossOrigin = false;
+    this._fields = {};
+    this.uri = null;
+    this.isInitalized = false;
+    this.title = null;
+    this.description = "";
+    this._required = [];
+    this.display = null;
+    this.nestedInput = false;
+
+    if (this.model &amp;&amp; options &amp;&amp; options.clearForm) {
+      this.model.clear();
+    } else if (!this.model) {
+      this.model = new Model();
+    }
+    if (options) {
+      if (options.nestedInput) {
+        this.nestedInput = options.nestedInput;
+      }
+
+      if (options.crossOrigin) {
+        this.crossOrigin = options.crossOrigin;
+      }
+      if (options.schema) {
+        // check if this is a schema vs a URI to get a schema
+        if (Augmented.isObject(options.schema)) {
+          this.schema = options.schema;
+        } else {
+          // is a URI?
+          let parsedSchema = null;
+          try {
+            parsedSchema = JSON.parse(options.schema);
+            if (parsedSchema &amp;&amp; Augmented.isObject(parsedSchema)) {
+              this.schema = parsedSchema;
+            }
+          } catch(e) {
+            //_logger.warn("AUGMENTED: AutoForm parsing string schema failed.  URI perhaps?");
+          }
+          if (!this.schema) {
+            this._retrieveSchema(options.schema);
+            this.isInitalized = false;
+          }
+        }
+      }
+
+      if (options.el) {
+        this.el = options.el;
+      }
+
+      if (options.uri) {
+        this.uri = options.uri;
+      }
+
+      if (options.data &amp;&amp; (Augmented.isObject(options.data))) {
+        this.model.set(options.data);
+      }
+      if (options.title) {
+        this.title = options.title;
+      }
+      if (options.description) {
+        this.description = options.description;
+      }
+
+      if (options.display) {
+        this.display = options.display;
+      }
+    }
+
+    if (this.model &amp;&amp; this.uri) {
+      this.model.url = this.uri;
+    }
+    if (this.model) {
+      this.model.crossOrigin = this.crossOrigin;
+    }
+    if (this.schema) {
+      if ((!this.name || this.name === "") &amp;&amp; this.schema.title) {
+        this.name = this.schema.title;
+      }
+      if ((!this.description || this.description === "") &amp;&amp; this.schema.description) {
+        this.description = this.schema.description;
+      }
+
+      if (this.schema.required) {
+        this._required = this.schema.required;
+      } else {
+        this._required = [];
+      }
+
+      if (!this.isInitalized) {
+        this._fields = this.schema.properties;
+        this.model.schema = this.schema;
+        this.isInitalized = true;
+      }
+    } else {
+      this.isInitalized = false;
+    }
+  };
+  // standard functionality
+
+  /**
+  * The crossOrigin property - enables cross origin fetch
+  * @property {boolean} crossOrigin The crossOrigin property
+  *
+  */
+
+  /**
+  * The fields property
+  * @property {object} fields The fields property
+  * @private
+  *
+  */
+
+  /**
+  * The URI property
+  * @property {string} uri The URI property
+  *
+  */
+
+  /**
+  * The model property
+  * @property {Augmented.Model} model The model property
+  *
+  */
+
+  /**
+  * The initialized property
+  * @property {boolean} isInitalized The initialized property
+  *
+  */
+
+  /**
+  * The title property
+  * @property {string} title The title of the form
+  *
+  */
+
+  /**
+  * The name property
+  * @property {string} name The name of the form
+  *
+  */
+
+  /**
+  * The description property
+  * @property {string} description The description of the form
+  *
+  */
+
+  /**
+  * The required fields property
+  * @property {Array} _required The required fields
+  *
+  * @private
+  */
+
+
+  /**
+    * Fields to display - null will display all
+    * @method display
+    *
+    */
+
+  _retrieveSchema(uri) {
+    let that = this;
+    let schema = null;
+    request({
+      url: uri,
+      contentType: "application/json",
+      dataType: "json",
+      success: (data, status) => {
+        if (typeof data === "string") {
+          schema = JSON.parse(data);
+        } else {
+          schema = data;
+        }
+        let options = { "schema": schema };
+        that.initialize(options);
+      },
+      error: (data, status) => {
+        //_logger.warn("AUGMENTED: AutoForm Failed to fetch schema!");
+      }
+    });
+  };
+
+  /**
+  * Sets the URI
+  *
+  * @param {string} uri The URI
+  */
+  setURI(uri) {
+    this.uri = uri;
+  };
+
+  /**
+  * Sets the schema
+  *
+  * @param {object} schema The JSON schema of the dataset
+  */
+  setSchema(schema) {
+    this.schema = schema;
+    this._fields = schema.properties;
+    this.model.reset();
+    this.model.schema = schema;
+
+    if (this.uri) {
+      model.url = this.uri;
+    }
+  };
+
+  /**
+  * Enable/Disable the progress bar
+  * @param {boolean} show Show or Hide the progress bar
+  */
+  showProgressBar(show) {
+    if (this.el) {
+      const e = Dom.selector(this.el);
+      if (e) {
+        const p = e.querySelector("progress");
+        if (p) {
+          p.style.display = (show) ? "block" : "none";
+          p.style.visibility = (show) ? "visible" : "hidden";
+        }
+      }
+    }
+  };
+
+  /**
+  * Show a message related to the form
+  *
+  * @param {string} message Some message to display
+  */
+  showMessage(message) {
+    if (this.el) {
+      const e = Dom.selector(this.el);
+      if (e) {
+        const p = e.querySelector("p[class=message]");
+        if (p) {
+          p.innerHTML = message;
+        }
+      }
+    }
+  };
+
+  /**
+  * Validate the form
+  *
+  * @returns {boolean} Returns true on success of validation
+  */
+  validate() {
+    let messages = (this.model) ? this.model.validate() : null;
+    if (!this.model.isValid() &amp;&amp; messages &amp;&amp; messages.messages) {
+      this.showMessage(formatValidationMessages(messages.messages));
+    } else {
+      this.showMessage("");
+    }
+    return messages;
+  };
+
+  /**
+  * Is the form valid
+  *
+  * @returns {boolean} Returns true if valid
+  */
+  isValid() {
+    return (this.model) ? this.model.isValid() : true;
+  };
+
+  /**
+  * Render the form
+  *
+  * @returns {object} Returns the view context ('this')
+  */
+  render() {
+    if (!this.isInitalized) {
+      //_logger.warn("AUGMENTED: AutomaticForm Can't render yet, not initialized!");
+      return this;
+    }
+
+    this.template = null;//"notused";
+    this.showProgressBar(true);
+
+    if (this.el) {
+      const e = Dom.selector(this.el);
+      if (e) {
+        if (this.theme) {
+          Dom.addClass(e, this.theme);
+        }
+        // progress bar
+        let n = document.createElement("progress"), t = document.createTextNode("Please wait.");
+        n.appendChild(t);
+        e.appendChild(n);
+
+        // the form
+        const form = formCompile(
+          ((this.title) ? this.title : null),
+          this.description,
+          this._fields,
+          this.model.toJSON(),
+          this._required,
+          this.name,
+          this.display,
+          this.nestedInput);
+        e.appendChild(form);
+        this._formEl = Dom.query("form", this.el);
+
+        // message
+        n = document.createElement("p");
+        n.classList.add("message");
+        e.appendChild(n);
+      }
+    } else {
+      //_logger.warn("AUGMENTED: AutomaticForm no element anchor, not rendering.");
+      this.showProgressBar(false);
+      return this;
+    }
+
+    this.delegateEvents();
+
+    this.syncAllBoundElements();
+
+    this.showProgressBar(false);
+    return this;
+  };
+
+  /**
+  * Reset the form
+  *
+  * @returns {object} Returns the view context ('this')
+  */
+  reset() {
+    if (this._formEl) {
+      this._formEl.reset();
+      this.model.reset();
+    }
+  };
+
+  /**
+  * Populate the form
+  * @param {object} data Data to fill in
+  *
+  * @returns {object} Returns the view context ('this')
+  */
+  populate(data) {
+    this.model.set(data);
+  };
+
+  /**
+  * Remove the form and all binds
+  */
+  remove() {
+    /* off to unbind the events */
+    this.undelegateEvents();
+    this.off();
+    this.stopListening();
+
+    Dom.empty(this.el);
+
+    return this;
+  };
+};
+
+export default AutomaticForm;
+</code></pre>
+		</section>
+			</div>
+		</div>
+	</div>
+	<footer>
+				<div class="footer-option"><a href='http://www.augmentedjs.com'>Augmented.js Homepage</a></div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Aug 10th 2018 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/clipboard.min.js"></script>
+	<script src="js/prism.min.js"></script>
+	<script src="js/template.min.js"></script>
+		<!-- start:lunr-search-modal.hbs -->
+		<div class="modal fade" id="lunr-search-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Search results</h4>
+					</div>
+					<div class="modal-body" id="lunr-search-body">
+					</div>
+					<div class="modal-footer" id="lunr-search-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div>
+		<!-- end:lunr-search-modal.hbs -->		<script src="js/lunr.min.js"></script>
+	
+</body>
+</html>
+<!-- end:source.tmpl.hbs -->
