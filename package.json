@@ -1,12 +1,12 @@
 {
-  "name": "presentation-table",
+  "name": "presentation-form",
   "version": "2.5.2",
-  "description": "The Augmented.js Next - Presentation Table View Module.",
-  "main": "dist/presentation-table.js",
+  "description": "The Augmented.js Next - Presentation Form View Module.",
+  "main": "dist/presentation-form.js",
   "scripts": {
     "dev": "webpack --mode development --module-bind js=babel-loader --progress",
     "build": "webpack --mode production --module-bind js=babel-loader --progress",
-    "lint": "eslint ./src/presentation-table.js",
+    "lint": "eslint ./src/presentation-form.js",
     "test": "mocha --require babel-core/register --require test/helper.js -c test/*Spec.js",
     "start": "node index.js",
     "docs": "rm -rf jsdoc && jsdoc ./src -r -d ./jsdoc/ -R ./README.md -t ./node_modules/foodoc/template -c ./jsdoc.conf.json -P ./package.json",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Augmentedjs/presentation-table.git"
+    "url": "git+https://github.com/Augmentedjs/presentation-form.git"
   },
   "keywords": [
     "augmentedjs",
@@ -51,7 +51,7 @@
     "presentation-widget": "^2.5.3"
   },
   "bugs": {
-    "url": "https://github.com/Augmentedjs/presentation-table/issues"
+    "url": "https://github.com/Augmentedjs/presentation-form/issues"
   },
   "homepage": "http://www.augmentedjs.com"
 }
