@@ -1,4 +1,4 @@
-import * as Augmented from "augmentedjs-next";
+import { isObject } from "next-core-utilities";
 import { DecoratorView } from "presentation-decorator";
 import { request } from "presentation-request";
 import { Model } from "presentation-models";
@@ -39,14 +39,14 @@ class AutomaticForm extends DecoratorView {
       }
       if (options.schema) {
         // check if this is a schema vs a URI to get a schema
-        if (Augmented.isObject(options.schema)) {
+        if (isObject(options.schema)) {
           this.schema = options.schema;
         } else {
           // is a URI?
           let parsedSchema = null;
           try {
             parsedSchema = JSON.parse(options.schema);
-            if (parsedSchema && Augmented.isObject(parsedSchema)) {
+            if (parsedSchema && isObject(parsedSchema)) {
               this.schema = parsedSchema;
             }
           } catch(e) {
@@ -67,7 +67,7 @@ class AutomaticForm extends DecoratorView {
         this.uri = options.uri;
       }
 
-      if (options.data && (Augmented.isObject(options.data))) {
+      if (options.data && (isObject(options.data))) {
         this.model.set(options.data);
       }
       if (options.title) {
@@ -134,7 +134,7 @@ class AutomaticForm extends DecoratorView {
 
   /**
   * The model property
-  * @property {Augmented.Model} model The model property
+  * @property {Model} model The model property
   *
   */
 

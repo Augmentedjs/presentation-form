@@ -26,11 +26,11 @@ module.exports = {
     ]
   },
   externals: {
-    'augmentedjs-next': {
-      commonjs: 'augmentedjs-next',
-      commonjs2: 'augmentedjs-next',
-      amd: 'augmentedjs-next',
-      root: 'Augmented'
+    'next-core-utilities': {
+      commonjs: 'next-core-utilities',
+      commonjs2: 'next-core-utilities',
+      amd: 'next-core-utilities',
+      root: 'next-core-utilities'
     },
     'presentation-models': {
       commonjs: 'presentation-models',
