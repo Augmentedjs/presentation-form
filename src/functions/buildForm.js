@@ -1,4 +1,4 @@
-import Widget from "presentation-widget";
+import { Widget } from "presentation-widget";
 
 const formCompile = (name, description, fields, model, required, binding, display, nestedInput) => {
   const form = document.createElement("form"), fs = document.createElement("formset"), keys = Object.keys(fields), l = ((display) ? display.length: keys.length);
