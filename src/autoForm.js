@@ -7,12 +7,15 @@ import formCompile from "./functions/buildForm.js";
 import formatValidationMessages from "./functions/messages.js";
 
 /**
-* A automatic form view created from a JSON Schema
-* @memberof Presentation.Component
-* @extends Presentation.DecoratorView
-*/
+ * A automatic form view created from a JSON Schema
+ * @memberof Presentation.Component
+ * @extends DecoratorView
+ */
 class AutomaticForm extends DecoratorView {
   constructor(options) {
+    if (!options) {
+      options = {};
+    }
     super(options);
     this.crossOrigin = false;
     this._fields = {};
@@ -23,63 +26,72 @@ class AutomaticForm extends DecoratorView {
     this._required = [];
     this.display = null;
     this.nestedInput = false;
+    this.submitButton = false;
+    this.resetButton = false;
 
     if (this.model && options && options.clearForm) {
       this.model.clear();
     } else if (!this.model) {
       this.model = new Model();
     }
-    if (options) {
-      if (options.nestedInput) {
-        this.nestedInput = options.nestedInput;
-      }
 
-      if (options.crossOrigin) {
-        this.crossOrigin = options.crossOrigin;
-      }
-      if (options.schema) {
-        // check if this is a schema vs a URI to get a schema
-        if (isObject(options.schema)) {
-          this.schema = options.schema;
-        } else {
-          // is a URI?
-          let parsedSchema = null;
-          try {
-            parsedSchema = JSON.parse(options.schema);
-            if (parsedSchema && isObject(parsedSchema)) {
-              this.schema = parsedSchema;
-            }
-          } catch(e) {
-            //_logger.warn("AUGMENTED: AutoForm parsing string schema failed.  URI perhaps?");
+    if (options.submitButton) {
+      this.submitButton = options.submitButton;
+    }
+
+    if (options.resetButton) {
+      this.resetButton = options.resetButton;
+    }
+
+    if (options.nestedInput) {
+      this.nestedInput = options.nestedInput;
+    }
+
+    if (options.crossOrigin) {
+      this.crossOrigin = options.crossOrigin;
+    }
+    if (options.schema) {
+      // check if this is a schema vs a URI to get a schema
+      if (isObject(options.schema)) {
+        this.schema = options.schema;
+      } else {
+        // is a URI?
+        let parsedSchema = null;
+        try {
+          parsedSchema = JSON.parse(options.schema);
+          if (parsedSchema && isObject(parsedSchema)) {
+            this.schema = parsedSchema;
           }
-          if (!this.schema) {
-            this._retrieveSchema(options.schema);
-            this.isInitalized = false;
-          }
+        } catch(e) {
+          //_logger.warn("AUGMENTED: AutoForm parsing string schema failed.  URI perhaps?");
+        }
+        if (!this.schema) {
+          this._retrieveSchema(options.schema);
+          this.isInitalized = false;
         }
       }
+    }
 
-      if (options.el) {
-        this.el = options.el;
-      }
+    if (options.el) {
+      this.el = options.el;
+    }
 
-      if (options.uri) {
-        this.uri = options.uri;
-      }
+    if (options.uri) {
+      this.uri = options.uri;
+    }
 
-      if (options.data && (isObject(options.data))) {
-        this.model.set(options.data);
-      }
-      if (options.title) {
-        this.title = options.title;
-      }
-      if (options.description) {
-        this.description = options.description;
-      }
+    if (options.data && (isObject(options.data))) {
+      this.model.set(options.data);
+    }
+    if (options.title) {
+      this.title = options.title;
+    }
+    if (options.description) {
+      this.description = options.description;
+    }
 
-      if (options.display) {
-        this.display = options.display;
-      }
+    if (options.display) {
+      this.display = options.display;
     }
 
     if (this.model && this.uri) {
@@ -111,70 +123,59 @@ class AutomaticForm extends DecoratorView {
       this.isInitalized = false;
     }
   };
-  // standard functionality
 
   /**
-  * The crossOrigin property - enables cross origin fetch
-  * @property {boolean} crossOrigin The crossOrigin property
-  *
-  */
+   * The crossOrigin property - enables cross origin fetch
+   * @property {boolean} crossOrigin The crossOrigin property
+   */
 
   /**
-  * The fields property
-  * @property {object} fields The fields property
-  * @private
-  *
-  */
+   * The fields property
+   * @property {object} _fields The fields property
+   * @private
+   */
 
   /**
-  * The URI property
-  * @property {string} uri The URI property
-  *
-  */
+   * The URI property
+   * @property {string} uri The URI property
+   */
 
   /**
-  * The model property
-  * @property {Model} model The model property
-  *
-  */
+   * The model property
+   * @property {Model} model The model property
+   */
 
   /**
-  * The initialized property
-  * @property {boolean} isInitalized The initialized property
-  *
-  */
+   * The initialized property
+   * @property {boolean} isInitalized The initialized property
+   */
 
   /**
-  * The title property
-  * @property {string} title The title of the form
-  *
-  */
+   * The title property
+   * @property {string} title The title of the form
+   */
 
   /**
-  * The name property
-  * @property {string} name The name of the form
-  *
-  */
+   * The name property
+   * @property {string} name The name of the form
+   */
 
   /**
-  * The description property
-  * @property {string} description The description of the form
-  *
-  */
+   * The description property
+   * @property {string} description The description of the form
+   */
 
   /**
-  * The required fields property
-  * @property {Array} _required The required fields
-  *
-  * @private
-  */
+   * The required fields property
+   * @property {Array} _required The required fields
+   * @private
+   */
 
 
   /**
-    * Fields to display - null will display all
-    * @method display
-    *
-    */
+   * Fields to display - null will display all
+   * @method display
+   */
 
   _retrieveSchema(uri) {
     let that = this;
@@ -199,19 +200,17 @@ class AutomaticForm extends DecoratorView {
   };
 
   /**
-  * Sets the URI
-  *
-  * @param {string} uri The URI
-  */
+   * Sets the URI
+   * @param {string} uri The URI
+   */
   setURI(uri) {
     this.uri = uri;
   };
 
   /**
-  * Sets the schema
-  *
-  * @param {object} schema The JSON schema of the dataset
-  */
+   * Sets the schema
+   * @param {object} schema The JSON schema of the dataset
+   */
   setSchema(schema) {
     this.schema = schema;
     this._fields = schema.properties;
@@ -224,9 +223,9 @@ class AutomaticForm extends DecoratorView {
   };
 
   /**
-  * Enable/Disable the progress bar
-  * @param {boolean} show Show or Hide the progress bar
-  */
+   * Enable/Disable the progress bar
+   * @param {boolean} show Show or Hide the progress bar
+   */
   showProgressBar(show) {
     if (this.el) {
       const e = Dom.selector(this.el);
@@ -241,10 +240,9 @@ class AutomaticForm extends DecoratorView {
   };
 
   /**
-  * Show a message related to the form
-  *
-  * @param {string} message Some message to display
-  */
+   * Show a message related to the form
+   * @param {string} message Some message to display
+   */
   showMessage(message) {
     if (this.el) {
       const e = Dom.selector(this.el);
@@ -258,10 +256,9 @@ class AutomaticForm extends DecoratorView {
   };
 
   /**
-  * Validate the form
-  *
-  * @returns {boolean} Returns true on success of validation
-  */
+   * Validate the form
+   * @returns {boolean} Returns true on success of validation
+   */
   validate() {
     let messages = (this.model) ? this.model.validate() : null;
     if (!this.model.isValid() && messages && messages.messages) {
@@ -273,19 +270,17 @@ class AutomaticForm extends DecoratorView {
   };
 
   /**
-  * Is the form valid
-  *
-  * @returns {boolean} Returns true if valid
-  */
+   * Is the form valid
+   * @returns {boolean} Returns true if valid
+   */
   isValid() {
     return (this.model) ? this.model.isValid() : true;
   };
 
   /**
-  * Render the form
-  *
-  * @returns {object} Returns the view context ('this')
-  */
+   * Render the form
+   * @returns {object} Returns the view context ('this')
+   */
   render() {
     if (!this.isInitalized) {
       //_logger.warn("AUGMENTED: AutomaticForm Can't render yet, not initialized!");
@@ -315,7 +310,10 @@ class AutomaticForm extends DecoratorView {
           this._required,
           this.name,
           this.display,
-          this.nestedInput);
+          this.nestedInput,
+          this.submitButton,
+          this.resetButton
+        );
         e.appendChild(form);
         this._formEl = Dom.query("form", this.el);
 
@@ -339,10 +337,9 @@ class AutomaticForm extends DecoratorView {
   };
 
   /**
-  * Reset the form
-  *
-  * @returns {object} Returns the view context ('this')
-  */
+   * Reset the form
+   * @returns {object} Returns the view context ('this')
+   */
   reset() {
     if (this._formEl) {
       this._formEl.reset();
@@ -351,18 +348,17 @@ class AutomaticForm extends DecoratorView {
   };
 
   /**
-  * Populate the form
-  * @param {object} data Data to fill in
-  *
-  * @returns {object} Returns the view context ('this')
-  */
+   * Populate the form
+   * @param {object} data Data to fill in
+   * @returns {object} Returns the view context ('this')
+   */
   populate(data) {
     this.model.set(data);
   };
 
   /**
-  * Remove the form and all binds
-  */
+   * Remove the form and all binds
+   */
   remove() {
     /* off to unbind the events */
     this.undelegateEvents();

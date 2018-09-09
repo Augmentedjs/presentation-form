@@ -1,6 +1,6 @@
 import { Widget } from "presentation-widget";
 
-const formCompile = (name, description, fields, model, required, binding, display, nestedInput) => {
+const formCompile = (name, description, fields, model, required, binding, display, nestedInput, submitButton, resetButton) => {
   const form = document.createElement("form"), fs = document.createElement("formset"), keys = Object.keys(fields), l = ((display) ? display.length: keys.length);
   let t, i, input, lb, req;
 
@@ -50,8 +50,21 @@ const formCompile = (name, description, fields, model, required, binding, displa
       }
     }
   }
+
+  if (resetButton) {
+    const reset = document.createElement("button");
+    reset.setAttribute("type", "reset");
+    reset.setAttribute(`data-${name}`, binding);
+    form.appendChild(reset);
+  }
+
+  if (submitButton) {
+    const submit = document.createElement("button");
+    submit.setAttribute("type", "submit");
+    submit.setAttribute(`data-${name}`, binding);
+    form.appendChild(submit);
+  }
   return form;
-  //e.appendChild(form);
 };
 
 export default formCompile;
