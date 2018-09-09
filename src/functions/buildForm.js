@@ -17,7 +17,6 @@ const formCompile = (name, description, fields, model, required, binding, displa
     lg.appendChild(t);
     fs.appendChild(lg);
   }
-  //console.debug("form display fields", display);
 
   if (!display) {
     display = keys;
@@ -26,7 +25,6 @@ const formCompile = (name, description, fields, model, required, binding, displa
   for (i = 0; i < l; i++) {
     let displayCol = true;
     if (display) {
-      //console.debug("form field: " + display[i] + " is present: " + keys.indexOf(display[i]) );
       displayCol = (keys.indexOf(display[i]) !== -1) ? true : false;
     }
 
@@ -54,14 +52,20 @@ const formCompile = (name, description, fields, model, required, binding, displa
   if (resetButton) {
     const reset = document.createElement("button");
     reset.setAttribute("type", "reset");
-    reset.setAttribute(`data-${name}`, binding);
+    reset.setAttribute(`data-${binding}`, "reset");
+    reset.setAttribute("data-click", "reset");
+    const t = document.createTextNode(resetButton);
+    reset.appendChild(t);
     form.appendChild(reset);
   }
 
   if (submitButton) {
     const submit = document.createElement("button");
     submit.setAttribute("type", "submit");
-    submit.setAttribute(`data-${name}`, binding);
+    submit.setAttribute(`data-${binding}`, "submit");
+    submit.setAttribute("data-click", "submit");
+    const t = document.createTextNode(submitButton);
+    submit.appendChild(t);
     form.appendChild(submit);
   }
   return form;
