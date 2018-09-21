@@ -1,8 +1,17 @@
 import { Widget } from "presentation-widget";
 
-const formCompile = (name, description, fields, model, required, binding, display, nestedInput, submitButton, resetButton) => {
+const formCompile = (name, description, fields, model, required, binding, display, nestedInput, submitButton, resetButton, style) => {
   const form = document.createElement("form"), fs = document.createElement("formset"), keys = Object.keys(fields), l = ((display) ? display.length: keys.length);
   let t, i, input, lb, req;
+
+  if (style) {
+    const styles = style.split(" ");
+    if (styles) {
+      for (i = 0; i < styles.length; i++) {
+        form.classList.add(styles[i]);
+      }
+    }
+  }
 
   form.appendChild(fs);
 

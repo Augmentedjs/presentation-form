@@ -80,6 +80,12 @@ class AutomaticForm extends DecoratorView {
       this.uri = options.uri;
     }
 
+    if (options.style) {
+      this.style = options.style;
+    } else {
+     this.style = "material";
+    }
+
     if (options.data && (isObject(options.data))) {
       this.model.set(options.data);
     }
@@ -122,6 +128,8 @@ class AutomaticForm extends DecoratorView {
     } else {
       this.isInitalized = false;
     }
+
+    console.debug("styles ", this.style);
   };
 
   /**
@@ -312,7 +320,8 @@ class AutomaticForm extends DecoratorView {
           this.display,
           this.nestedInput,
           this.submitButton,
-          this.resetButton
+          this.resetButton,
+          this.style
         );
         e.appendChild(form);
         this._formEl = Dom.query("form", this.el);
