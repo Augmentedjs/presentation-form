@@ -128,8 +128,6 @@ class AutomaticForm extends DecoratorView {
     } else {
       this.isInitalized = false;
     }
-
-    console.debug("styles ", this.style);
   };
 
   /**
