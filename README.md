@@ -31,32 +31,52 @@ Augmented.js Presentation Automatic Form View Module
     -   [\_retrieveSchema](#_retrieveschema-6)
         -   [Parameters](#parameters-7)
         -   [Properties](#properties-6)
-    -   [setURI](#seturi)
+    -   [\_retrieveSchema](#_retrieveschema-7)
         -   [Parameters](#parameters-8)
-    -   [setSchema](#setschema)
+        -   [Properties](#properties-7)
+    -   [setURI](#seturi)
         -   [Parameters](#parameters-9)
-    -   [showProgressBar](#showprogressbar)
+    -   [setSchema](#setschema)
         -   [Parameters](#parameters-10)
-    -   [showMessage](#showmessage)
+    -   [showProgressBar](#showprogressbar)
         -   [Parameters](#parameters-11)
+    -   [showMessage](#showmessage)
+        -   [Parameters](#parameters-12)
     -   [validate](#validate)
     -   [isValid](#isvalid)
     -   [render](#render)
     -   [reset](#reset)
     -   [populate](#populate)
-        -   [Parameters](#parameters-12)
+        -   [Parameters](#parameters-13)
     -   [remove](#remove)
--   [display](#display)
+-   [formCompile](#formcompile)
+    -   [Parameters](#parameters-14)
 
 ## AutomaticForm
 
 **Extends DecoratorView**
 
 A automatic form view created from a JSON Schema
+<br/>
+
+Supported options:
+
+<ul>
+<li>schema - The JSON Schema for use with the UI and validation</li>
+<li>data - prepopulate the model data</li>
+<li>crossOrigin - Set CORS for the fetch</li>
+<li>uri - the uri to fetch data from </li>
+<li>title - the title of the form</li>
+<li>description</li>
+<li>display - Array of fields to display (others are hidden)</li>
+<li>nestedInput - add additional markup in the form (DOM elements)</li>
+<li>submitButton - set the name of the submit button (binds to a submit function)</li>
+<li>resetButton - set the name of the reset button (binds to a reset function)</li>
+</ul>
 
 ### Parameters
 
--   `options`  
+-   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options for the class
 
 ### \_retrieveSchema
 
@@ -142,6 +162,16 @@ The description property
 
 -   `description` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The description of the form
 
+### \_retrieveSchema
+
+#### Parameters
+
+-   `uri`  
+
+#### Properties
+
+-   `display` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Fields to display - null will display all
+
 ### setURI
 
 Sets the URI
@@ -149,6 +179,11 @@ Sets the URI
 #### Parameters
 
 -   `uri` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The URI
+
+**Meta**
+
+-   **deprecated**: Use property
+
 
 ### setSchema
 
@@ -212,6 +247,20 @@ Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 Remove the form and all binds
 
-## display
+## formCompile
 
-Fields to display - null will display all
+### Parameters
+
+-   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the form
+-   `description` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** A description
+-   `fields` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Object of fields with types (see JSON scheme properties format)
+-   `model` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Data for the fields by key
+-   `required` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Array of requires fields
+-   `binding` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the binding function
+-   `display` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Array of fields to display
+-   `nestedInput` **Dom** Dom tree of nested markup
+-   `submitButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the Submit button
+-   `resetButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the reset button
+-   `style` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of styles
+
+Returns **Dom** Dom tree of form elements

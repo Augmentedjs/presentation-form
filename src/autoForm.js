@@ -8,7 +8,22 @@ import formatValidationMessages from "./functions/messages.js";
 
 /**
  * A automatic form view created from a JSON Schema
- * @memberof Presentation.Component
+ * <br/>
+ *
+ * Supported options:
+ * <ul>
+ * <li>schema - The JSON Schema for use with the UI and validation</li>
+ * <li>data - prepopulate the model data</li>
+ * <li>crossOrigin - Set CORS for the fetch</li>
+ * <li>uri - the uri to fetch data from </li>
+ * <li>title - the title of the form</li>
+ * <li>description</li>
+ * <li>display - Array of fields to display (others are hidden)</li>
+ * <li>nestedInput - add additional markup in the form (DOM elements)</li>
+ * <li>submitButton - set the name of the submit button (binds to a submit function)</li>
+ * <li>resetButton - set the name of the reset button (binds to a reset function)</li>
+ * </ul>
+ * @param {Object} options Options for the class
  * @extends DecoratorView
  */
 class AutomaticForm extends DecoratorView {
@@ -177,16 +192,14 @@ class AutomaticForm extends DecoratorView {
    * @private
    */
 
-
   /**
-   * Fields to display - null will display all
-   * @method display
+   * @property {array} display Fields to display - null will display all
    */
 
   _retrieveSchema(uri) {
-    let that = this;
+    const that = this;
     let schema = null;
-    request({
+    return request({
       url: uri,
       contentType: "application/json",
       dataType: "json",
@@ -196,11 +209,10 @@ class AutomaticForm extends DecoratorView {
         } else {
           schema = data;
         }
-        let options = { "schema": schema };
-        that.initialize(options);
+        that.initialize({ "schema": schema });
       },
       error: (data, status) => {
-        //_logger.warn("AUGMENTED: AutoForm Failed to fetch schema!");
+        console.warn(`${this.name} Failed to fetch schema!`, status);
       }
     });
   };
@@ -208,6 +220,7 @@ class AutomaticForm extends DecoratorView {
   /**
    * Sets the URI
    * @param {string} uri The URI
+   * @deprecated Use property
    */
   setURI(uri) {
     this.uri = uri;
@@ -287,9 +300,9 @@ class AutomaticForm extends DecoratorView {
    * Render the form
    * @returns {object} Returns the view context ('this')
    */
-  render() {
+  async render() {
     if (!this.isInitalized) {
-      //_logger.warn("AUGMENTED: AutomaticForm Can't render yet, not initialized!");
+      console.warn(`${this.name} Can't render yet, not initialized!`);
       return this;
     }
 
@@ -297,7 +310,7 @@ class AutomaticForm extends DecoratorView {
     this.showProgressBar(true);
 
     if (this.el) {
-      const e = Dom.selector(this.el);
+      const e = await Dom.selector(this.el);
       if (e) {
         if (this.theme) {
           Dom.addClass(e, this.theme);
@@ -308,7 +321,7 @@ class AutomaticForm extends DecoratorView {
         e.appendChild(n);
 
         // the form
-        const form = formCompile(
+        const form = await formCompile(
           ((this.title) ? this.title : null),
           this.description,
           this._fields,
@@ -321,7 +334,9 @@ class AutomaticForm extends DecoratorView {
           this.resetButton,
           this.style
         );
-        e.appendChild(form);
+        if (form) {
+          await e.appendChild(form);
+        }
         this._formEl = Dom.query("form", this.el);
 
         // message
@@ -330,15 +345,13 @@ class AutomaticForm extends DecoratorView {
         e.appendChild(n);
       }
     } else {
-      //_logger.warn("AUGMENTED: AutomaticForm no element anchor, not rendering.");
+      console.warn(`${this.name} no element anchor, not rendering.`);
       this.showProgressBar(false);
       return this;
     }
 
-    this.delegateEvents();
-
-    this.syncAllBoundElements();
-
+    await this.delegateEvents();
+    await this.syncAllBoundElements();
     this.showProgressBar(false);
     return this;
   };
@@ -352,6 +365,7 @@ class AutomaticForm extends DecoratorView {
       this._formEl.reset();
       this.model.reset();
     }
+    return this;
   };
 
   /**
@@ -361,6 +375,7 @@ class AutomaticForm extends DecoratorView {
    */
   populate(data) {
     this.model.set(data);
+    return this;
   };
 
   /**

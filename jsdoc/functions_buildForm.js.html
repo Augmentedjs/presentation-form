@@ -1,9 +1,10 @@
+<!-- start:source.tmpl.hbs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-		<title>Globals</title>
+		<title>functions/buildForm.js</title>
 		<link rel="icon" type="image/png" href="favicon.png"/>
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -42,7 +43,7 @@
 			</style>
 		<script type="text/javascript">
 			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"ddd MMM Do YYYY","systemName":"Augmented.js Next Presentation","systemSummary":"Augmented.js Next Presentation - Simply Development.","systemLogo":"img/jensen-silo-circle-small.png","systemColor":"#607D8B","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"<a href='http://www.augmentedjs.com'>Augmented.js Homepage</a>","copyright":"","linenums":true,"collapseSymbols":false,"inverseNav":true,"inlineNav":false,"outputSourceFiles":true,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":true,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":false,"sort":"linenum, longname, version, since","search":true,"favicon":"favicon.png","stylesheets":[],"scripts":[],"monospaceLinks":false,"cleverLinks":false,"logoFile":"public/images/jensen-silo-circle-small.png","navType":"vertical","protocol":"html://"};
-			window.DOCLET_TOC_ENABLED = true;
+			window.DOCLET_TOC_ENABLED = false;
 			window.DOCLET_AFILTER_ENABLED = false;
 		</script>
 </head>
@@ -92,163 +93,131 @@
 	</header>
 	<!-- end:navbar.hbs -->		<div class="page-header">
 			<div class="container">
-				<span class="kind">global</span>
-				<h1><span class="name">Globals</span></h1>
-				<div class="summary"><p>All documented globals.</p></div>			</div>
+				<span class="kind">source</span>
+				<h1><span class="name">functions/buildForm.js</span></h1>
+			</div>
 		</div>
 	<div class="container content">
 		<div class="row">
-			<div class="col-md-9 main-content">
-						<ol class="breadcrumb">
-							<li><a href="index.html">Home</a></li>
-							<li class="active">Globals</li>
-						</ol>
-					<section>
-							<article class="secondary">
-									<h3>Methods</h3>
-									<dl class="symbol">
-											<hr/>
-											<dt class="symbol-title function public">
-			<h4 id="formCompileCreatsthemarkupfortheform" class="function public"><span class="name">formCompile Creats the markup for the form</span><span class="signature-params">( <span class="signature-param">name</span>, <span class="signature-param">description</span>, <span class="signature-param">fields</span>, <span class="signature-param">model</span>, <span class="signature-param">required</span>, <span class="signature-param">binding</span>, <span class="signature-param">display</span>, <span class="signature-param">nestedInput</span>, <span class="signature-param">submitButton</span>, <span class="signature-param">resetButton</span>, <span class="signature-param">style</span>&nbsp;)</span></h4>
-		</dt>
-<dd class="symbol-details function public">
-	<div class="symbol-details-inner">
-			<div class="callout callout-info">
-				<h5>Parameters</h5>
-				<table class="params table table-striped">
-					<thead>
-					<tr>
-							<th>Name</th>
-						<th>Type</th>
-						<th class="last">Description</th>
-					</tr>
-					</thead>
-					<tbody>
-						<tr>
-								<td><code>name</code></td>
-							<td><span class="param-type">string</span></td>
-							<td class="last">
-									<p>Name of the form</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>description</code></td>
-							<td><span class="param-type">string</span></td>
-							<td class="last">
-									<p>A description</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>fields</code></td>
-							<td><span class="param-type">object</span></td>
-							<td class="last">
-									<p>Object of fields with types (see JSON scheme properties format)</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>model</code></td>
-							<td><span class="param-type">object</span></td>
-							<td class="last">
-									<p>Data for the fields by key</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>required</code></td>
-							<td><span class="param-type">array</span></td>
-							<td class="last">
-									<p>Array of requires fields</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>binding</code></td>
-							<td><span class="param-type">string</span></td>
-							<td class="last">
-									<p>Name of the binding function</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>display</code></td>
-							<td><span class="param-type">array</span></td>
-							<td class="last">
-									<p>Array of fields to display</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>nestedInput</code></td>
-							<td><span class="param-type">Dom</span></td>
-							<td class="last">
-									<p>Dom tree of nested markup</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>submitButton</code></td>
-							<td><span class="param-type">string</span></td>
-							<td class="last">
-									<p>Name of the Submit button</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>resetButton</code></td>
-							<td><span class="param-type">string</span></td>
-							<td class="last">
-									<p>Name of the reset button</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>style</code></td>
-							<td><span class="param-type">string</span></td>
-							<td class="last">
-									<p>Name of styles</p>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="col-md-12 main-content">
+		<section class="source-section">
+			<article></article>
+			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">import { Widget } from "presentation-widget";
+
+/**
+ * @function formCompile Creats the markup for the form
+ * @param {string} name Name of the form
+ * @param {string} description A description
+ * @param {object} fields Object of fields with types (see JSON scheme properties format)
+ * @param {object} model Data for the fields by key
+ * @param {array} required Array of requires fields
+ * @param {string} binding Name of the binding function
+ * @param {array} display Array of fields to display
+ * @param {Dom} nestedInput Dom tree of nested markup
+ * @param {string} submitButton Name of the Submit button
+ * @param {string} resetButton  Name of the reset button
+ * @param {string} style Name of styles
+ * @returns {Dom} Dom tree of form elements
+ */
+const formCompile = (
+                      name,
+                      description,
+                      fields,
+                      model,
+                      required,
+                      binding,
+                      display,
+                      nestedInput,
+                      submitButton,
+                      resetButton,
+                      style
+                    ) => {
+  const form = document.createElement("form"),
+        fs = document.createElement("fieldset"),
+        keys = Object.keys(fields),
+        l = ((display) ? display.length: keys.length);
+  let t, i, input, lb, req;
+
+  if (style) {
+    const styles = style.split(" ");
+    if (styles) {
+      for (i = 0; i &lt; styles.length; i++) {
+        form.classList.add(styles[i]);
+      }
+    }
+  }
+
+  form.appendChild(fs);
+
+  if (name) {
+    const lg = document.createElement("legend");
+    t = document.createTextNode(name);
+    if (description) {
+      const att = document.createAttribute("title");
+      att.value = description;
+      lg.setAttributeNode(att);
+    }
+    lg.appendChild(t);
+    fs.appendChild(lg);
+  }
+
+  if (!display) {
+    display = keys;
+  }
+
+  for (i = 0; i &lt; l; i++) {
+    let displayCol = true;
+    if (display) {
+      displayCol = (keys.indexOf(display[i]) !== -1) ? true : false;
+    }
+
+    if (displayCol) {
+      req = (required.indexOf(display[i]) !== -1);
+      lb = document.createElement("label");
+      lb.setAttribute("for", display[i]);
+      t = document.createTextNode(fields[display[i]].description);
+      lb.appendChild(t);
+      input = Widget.Input(fields[display[i]], display[i], model[display[i]], display[i], req, binding);
+      if (nestedInput) {
+        if (input) {
+          lb.appendChild(input);
+        }
+        fs.appendChild(lb);
+      } else {
+        fs.appendChild(lb);
+        if (input) {
+          fs.appendChild(input);
+        }
+      }
+    }
+  }
+
+  if (resetButton) {
+    const reset = document.createElement("button");
+    reset.setAttribute("type", "reset");
+    reset.setAttribute(`data-${binding}`, "reset");
+    reset.setAttribute("data-click", "reset");
+    const t = document.createTextNode(resetButton);
+    reset.appendChild(t);
+    form.appendChild(reset);
+  }
+
+  if (submitButton) {
+    const submit = document.createElement("button");
+    submit.setAttribute("type", "submit");
+    submit.setAttribute(`data-${binding}`, "submit");
+    submit.setAttribute("data-click", "submit");
+    const t = document.createTextNode(submitButton);
+    submit.appendChild(t);
+    form.appendChild(submit);
+  }
+  return form;
+};
+
+export default formCompile;
+</code></pre>
+		</section>
 			</div>
-			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
-							<div class="form-group">
-								<label class="col-sm-3 control-label returns-type"><span class="param-type">Dom</span></label>
-								<div class="col-sm-9">
-									<div class="form-control-static returns-description"><p>Dom tree of form elements</p></div>
-								</div>
-							</div>
-					</form>
-			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-							<!-- source -->
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Source</label>
-								<div class="col-sm-9">
-									<p class="form-control-static"><a href="functions_buildForm.js.html">functions/buildForm.js</a>, <a href="functions_buildForm.js.html#line-3">line 3</a></p>
-								</div>
-							</div>
-			
-			
-			
-			
-					</form>
-			</div>	</div>
-</dd>
-									</dl>
-							</article>
-					</section>
-			</div>
-				<div class="col-md-3 side-content">
-					<nav class="toc hidden-print hidden-sm hidden-xs"></nav>
-				</div>
 		</div>
 	</div>
 	<footer>
@@ -280,3 +249,4 @@
 	
 </body>
 </html>
+<!-- end:source.tmpl.hbs -->

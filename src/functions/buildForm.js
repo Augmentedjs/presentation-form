@@ -1,7 +1,37 @@
 import { Widget } from "presentation-widget";
 
-const formCompile = (name, description, fields, model, required, binding, display, nestedInput, submitButton, resetButton, style) => {
-  const form = document.createElement("form"), fs = document.createElement("fieldset"), keys = Object.keys(fields), l = ((display) ? display.length: keys.length);
+/**
+ * @function formCompile Creats the markup for the form
+ * @param {string} name Name of the form
+ * @param {string} description A description
+ * @param {object} fields Object of fields with types (see JSON scheme properties format)
+ * @param {object} model Data for the fields by key
+ * @param {array} required Array of requires fields
+ * @param {string} binding Name of the binding function
+ * @param {array} display Array of fields to display
+ * @param {Dom} nestedInput Dom tree of nested markup
+ * @param {string} submitButton Name of the Submit button
+ * @param {string} resetButton  Name of the reset button
+ * @param {string} style Name of styles
+ * @returns {Dom} Dom tree of form elements
+ */
+const formCompile = (
+                      name,
+                      description,
+                      fields,
+                      model,
+                      required,
+                      binding,
+                      display,
+                      nestedInput,
+                      submitButton,
+                      resetButton,
+                      style
+                    ) => {
+  const form = document.createElement("form"),
+        fs = document.createElement("fieldset"),
+        keys = Object.keys(fields),
+        l = ((display) ? display.length: keys.length);
   let t, i, input, lb, req;
 
   if (style) {
