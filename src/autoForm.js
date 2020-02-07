@@ -300,7 +300,7 @@ class AutomaticForm extends DecoratorView {
    * Render the form
    * @returns {object} Returns the view context ('this')
    */
-  async render() {
+  render() {
     if (!this.isInitalized) {
       console.warn(`${this.name} Can't render yet, not initialized!`);
       return this;
@@ -310,7 +310,7 @@ class AutomaticForm extends DecoratorView {
     this.showProgressBar(true);
 
     if (this.el) {
-      const e = await Dom.selector(this.el);
+      const e = Dom.selector(this.el);
       if (e) {
         if (this.theme) {
           Dom.addClass(e, this.theme);
@@ -321,7 +321,7 @@ class AutomaticForm extends DecoratorView {
         e.appendChild(n);
 
         // the form
-        const form = await formCompile(
+        const form = formCompile(
           ((this.title) ? this.title : null),
           this.description,
           this._fields,
@@ -335,7 +335,7 @@ class AutomaticForm extends DecoratorView {
           this.style
         );
         if (form) {
-          await e.appendChild(form);
+          e.appendChild(form);
         }
         this._formEl = Dom.query("form", this.el);
 
@@ -350,8 +350,8 @@ class AutomaticForm extends DecoratorView {
       return this;
     }
 
-    await this.delegateEvents();
-    await this.syncAllBoundElements();
+    this.delegateEvents();
+    this.syncAllBoundElements();
     this.showProgressBar(false);
     return this;
   };

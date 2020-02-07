@@ -152,24 +152,30 @@
 <li><a href="#properties-6">Properties</a></li>
 </ul>
 </li>
-<li><a href="#seturi">setURI</a>
+<li><a href="#_retrieveschema-7">_retrieveSchema</a>
 <ul>
 <li><a href="#parameters-8">Parameters</a></li>
+<li><a href="#properties-7">Properties</a></li>
 </ul>
 </li>
-<li><a href="#setschema">setSchema</a>
+<li><a href="#seturi">setURI</a>
 <ul>
 <li><a href="#parameters-9">Parameters</a></li>
 </ul>
 </li>
-<li><a href="#showprogressbar">showProgressBar</a>
+<li><a href="#setschema">setSchema</a>
 <ul>
 <li><a href="#parameters-10">Parameters</a></li>
 </ul>
 </li>
-<li><a href="#showmessage">showMessage</a>
+<li><a href="#showprogressbar">showProgressBar</a>
 <ul>
 <li><a href="#parameters-11">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#showmessage">showMessage</a>
+<ul>
+<li><a href="#parameters-12">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#validate">validate</a></li>
@@ -178,20 +184,38 @@
 <li><a href="#reset">reset</a></li>
 <li><a href="#populate">populate</a>
 <ul>
-<li><a href="#parameters-12">Parameters</a></li>
+<li><a href="#parameters-13">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#remove">remove</a></li>
 </ul>
 </li>
-<li><a href="#display">display</a></li>
+<li><a href="#formcompile">formCompile</a>
+<ul>
+<li><a href="#parameters-14">Parameters</a></li>
+</ul>
+</li>
 </ul>
 <h2>AutomaticForm</h2>
 <p><strong>Extends DecoratorView</strong></p>
-<p>A automatic form view created from a JSON Schema</p>
+<p>A automatic form view created from a JSON Schema<br>
+<br/></p>
+<p>Supported options:</p>
+<ul>
+<li>schema - The JSON Schema for use with the UI and validation</li>
+<li>data - prepopulate the model data</li>
+<li>crossOrigin - Set CORS for the fetch</li>
+<li>uri - the uri to fetch data from </li>
+<li>title - the title of the form</li>
+<li>description</li>
+<li>display - Array of fields to display (others are hidden)</li>
+<li>nestedInput - add additional markup in the form (DOM elements)</li>
+<li>submitButton - set the name of the submit button (binds to a submit function)</li>
+<li>resetButton - set the name of the reset button (binds to a reset function)</li>
+</ul>
 <h3>Parameters</h3>
 <ul>
-<li><code>options</code></li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> Options for the class</li>
 </ul>
 <h3>_retrieveSchema</h3>
 <p>The crossOrigin property - enables cross origin fetch</p>
@@ -263,11 +287,24 @@
 <ul>
 <li><code>description</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The description of the form</li>
 </ul>
+<h3>_retrieveSchema</h3>
+<h4>Parameters</h4>
+<ul>
+<li><code>uri</code></li>
+</ul>
+<h4>Properties</h4>
+<ul>
+<li><code>display</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></strong> Fields to display - null will display all</li>
+</ul>
 <h3>setURI</h3>
 <p>Sets the URI</p>
 <h4>Parameters</h4>
 <ul>
 <li><code>uri</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The URI</li>
+</ul>
+<p><strong>Meta</strong></p>
+<ul>
+<li><strong>deprecated</strong>: Use property</li>
 </ul>
 <h3>setSchema</h3>
 <p>Sets the schema</p>
@@ -308,8 +345,22 @@
 <p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong> Returns the view context ('this')</p>
 <h3>remove</h3>
 <p>Remove the form and all binds</p>
-<h2>display</h2>
-<p>Fields to display - null will display all</p></article>
+<h2>formCompile</h2>
+<h3>Parameters</h3>
+<ul>
+<li><code>name</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> Name of the form</li>
+<li><code>description</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> A description</li>
+<li><code>fields</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong> Object of fields with types (see JSON scheme properties format)</li>
+<li><code>model</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong> Data for the fields by key</li>
+<li><code>required</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></strong> Array of requires fields</li>
+<li><code>binding</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> Name of the binding function</li>
+<li><code>display</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></strong> Array of fields to display</li>
+<li><code>nestedInput</code> <strong>Dom</strong> Dom tree of nested markup</li>
+<li><code>submitButton</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> Name of the Submit button</li>
+<li><code>resetButton</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> Name of the reset button</li>
+<li><code>style</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> Name of styles</li>
+</ul>
+<p>Returns <strong>Dom</strong> Dom tree of form elements</p></article>
 		</section>
 			</div>
 				<div class="col-md-3 side-content">

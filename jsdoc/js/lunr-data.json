@@ -156,7 +156,6 @@
           "automaticform#rend",
           "form",
           "function",
-          "lt;async&gt",
           "render"
         ],
         "AutomaticForm.html#reset": [
@@ -988,7 +987,7 @@
                     "docs": {
                       "AutomaticForm.html#render": {
                         "ref": "AutomaticForm.html#render",
-                        "tf": 725
+                        "tf": 775
                       }
                     }
                   }
@@ -1391,41 +1390,6 @@
                               "list_class.html": {
                                 "ref": "list_class.html",
                                 "tf": 1300
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "t": {
-            "docs": {},
-            ";": {
-              "docs": {},
-              "a": {
-                "docs": {},
-                "s": {
-                  "docs": {},
-                  "y": {
-                    "docs": {},
-                    "n": {
-                      "docs": {},
-                      "c": {
-                        "docs": {},
-                        "&": {
-                          "docs": {},
-                          "g": {
-                            "docs": {},
-                            "t": {
-                              "docs": {
-                                "AutomaticForm.html#render": {
-                                  "ref": "AutomaticForm.html#render",
-                                  "tf": 50
-                                }
                               }
                             }
                           }
@@ -1981,7 +1945,7 @@
           }
         }
       },
-      "length": 110
+      "length": 109
     },
     "corpusTokens": [
       "_retrieveschema",
@@ -2028,7 +1992,6 @@
       "json",
       "list",
       "list:class",
-      "lt;async&gt",
       "markup",
       "messag",
       "model",
@@ -2189,7 +2152,7 @@
     "AutomaticForm.html#render": {
       "id": "AutomaticForm.html#render",
       "kind": "function",
-      "title": "&lt;async&gt; render()",
+      "title": "render()",
       "longname": "AutomaticForm#render",
       "name": "render",
       "tags": "AutomaticForm#render render",
