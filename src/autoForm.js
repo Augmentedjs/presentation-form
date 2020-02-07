@@ -31,6 +31,9 @@ class AutomaticForm extends DecoratorView {
     if (!options) {
       options = {};
     }
+    if (!options.tagName) {
+      options.tagName = "form";
+    }
     super(options);
     this.crossOrigin = false;
     this._fields = {};
@@ -332,7 +335,8 @@ class AutomaticForm extends DecoratorView {
           this.nestedInput,
           this.submitButton,
           this.resetButton,
-          this.style
+          this.style,
+          this.tagName
         );
         if (form) {
           e.appendChild(form);

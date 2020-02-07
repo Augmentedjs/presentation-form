@@ -13,6 +13,7 @@ import { Widget } from "presentation-widget";
  * @param {string} submitButton Name of the Submit button
  * @param {string} resetButton  Name of the reset button
  * @param {string} style Name of styles
+ * @param {string} tagName Name of tag
  * @returns {Dom} Dom tree of form elements
  */
 const formCompile = (
@@ -26,9 +27,10 @@ const formCompile = (
                       nestedInput,
                       submitButton,
                       resetButton,
-                      style
+                      style,
+                      tagName
                     ) => {
-  const form = document.createElement("form"),
+  const form = document.createElement(tagName),
         fs = document.createElement("fieldset"),
         keys = Object.keys(fields),
         l = ((display) ? display.length: keys.length);
