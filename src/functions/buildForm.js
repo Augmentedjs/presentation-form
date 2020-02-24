@@ -80,7 +80,7 @@ const formCompile = (
       t = document.createTextNode(fields[display[i]].description);
       lb.appendChild(t);
       input = Widget.Input(fields[display[i]], display[i], model[display[i]], display[i], req, binding);
-
+      input.setAttribute("placeholder", display[i]);
       if (nestedInput) {
         if (input) {
           lb.appendChild(input);
