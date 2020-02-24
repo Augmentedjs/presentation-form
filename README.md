@@ -34,23 +34,32 @@ Augmented.js Presentation Automatic Form View Module
     -   [\_retrieveSchema](#_retrieveschema-7)
         -   [Parameters](#parameters-8)
         -   [Properties](#properties-7)
-    -   [setURI](#seturi)
+    -   [\_retrieveSchema](#_retrieveschema-8)
         -   [Parameters](#parameters-9)
-    -   [setSchema](#setschema)
+        -   [Properties](#properties-8)
+    -   [\_retrieveSchema](#_retrieveschema-9)
         -   [Parameters](#parameters-10)
-    -   [showProgressBar](#showprogressbar)
+        -   [Properties](#properties-9)
+    -   [\_retrieveSchema](#_retrieveschema-10)
         -   [Parameters](#parameters-11)
-    -   [showMessage](#showmessage)
+        -   [Properties](#properties-10)
+    -   [setURI](#seturi)
         -   [Parameters](#parameters-12)
+    -   [setSchema](#setschema)
+        -   [Parameters](#parameters-13)
+    -   [showProgressBar](#showprogressbar)
+        -   [Parameters](#parameters-14)
+    -   [showMessage](#showmessage)
+        -   [Parameters](#parameters-15)
     -   [validate](#validate)
     -   [isValid](#isvalid)
     -   [render](#render)
     -   [reset](#reset)
     -   [populate](#populate)
-        -   [Parameters](#parameters-13)
+        -   [Parameters](#parameters-16)
     -   [remove](#remove)
 -   [formCompile](#formcompile)
-    -   [Parameters](#parameters-14)
+    -   [Parameters](#parameters-17)
 
 ## AutomaticForm
 
@@ -172,6 +181,36 @@ The description property
 
 -   `display` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Fields to display - null will display all
 
+### \_retrieveSchema
+
+#### Parameters
+
+-   `uri`  
+
+#### Properties
+
+-   `nestedInput` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Sets the input field as a chile of the label (defaults to false)
+
+### \_retrieveSchema
+
+#### Parameters
+
+-   `uri`  
+
+#### Properties
+
+-   `submitButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the submit button (defaults to null)
+
+### \_retrieveSchema
+
+#### Parameters
+
+-   `uri`  
+
+#### Properties
+
+-   `resetButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the reset button (defaults to null)
+
 ### setURI
 
 Sets the URI
@@ -262,5 +301,6 @@ Remove the form and all binds
 -   `submitButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the Submit button
 -   `resetButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the reset button
 -   `style` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of styles
+-   `tagName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of tag
 
 Returns **Dom** Dom tree of form elements

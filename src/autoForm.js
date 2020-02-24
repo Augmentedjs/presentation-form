@@ -81,7 +81,7 @@ class AutomaticForm extends DecoratorView {
             this.schema = parsedSchema;
           }
         } catch(e) {
-          //_logger.warn("AUGMENTED: AutoForm parsing string schema failed.  URI perhaps?");
+          console.warn(`AUGMENTED: AutoForm "${this.name}" parsing string schema failed.  URI perhaps?`);
         }
         if (!this.schema) {
           this._retrieveSchema(options.schema);
@@ -119,7 +119,7 @@ class AutomaticForm extends DecoratorView {
     }
 
     if (this.model && this.uri) {
-      this.model.url = this.uri;
+      this.model.uri = this.uri;
     }
     if (this.model) {
       this.model.crossOrigin = this.crossOrigin;
@@ -199,14 +199,26 @@ class AutomaticForm extends DecoratorView {
    * @property {array} display Fields to display - null will display all
    */
 
+  /**
+   * @property {boolean} nestedInput Sets the input field as a chile of the label (defaults to false)
+   */
+
+  /**
+   * @property {string} submitButton The name of the submit button (defaults to null)
+   */
+
+  /**
+   * @property {string} resetButton The name of the reset button (defaults to null)
+   */
+
   _retrieveSchema(uri) {
     const that = this;
-    let schema = null;
     return request({
       url: uri,
       contentType: "application/json",
       dataType: "json",
       success: (data, status) => {
+        let schema = null;
         if (typeof data === "string") {
           schema = JSON.parse(data);
         } else {
@@ -215,7 +227,7 @@ class AutomaticForm extends DecoratorView {
         that.initialize({ "schema": schema });
       },
       error: (data, status) => {
-        console.warn(`${this.name} Failed to fetch schema!`, status);
+        console.error(`${this.name} Failed to fetch schema!`, status);
       }
     });
   };
@@ -240,7 +252,7 @@ class AutomaticForm extends DecoratorView {
     this.model.schema = schema;
 
     if (this.uri) {
-      model.url = this.uri;
+      model.uri = this.uri;
     }
   };
 
@@ -341,7 +353,7 @@ class AutomaticForm extends DecoratorView {
         if (form) {
           e.appendChild(form);
         }
-        this._formEl = Dom.query("form", this.el);
+        this._formEl = Dom.query(this.tagName, this.el);
 
         // message
         n = document.createElement("p");
@@ -366,7 +378,9 @@ class AutomaticForm extends DecoratorView {
    */
   reset() {
     if (this._formEl) {
-      this._formEl.reset();
+      if (this._formEl.reset) {
+        this._formEl.reset();
+      }
       this.model.reset();
     }
     return this;

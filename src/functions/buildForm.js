@@ -63,6 +63,7 @@ const formCompile = (
     display = keys;
   }
 
+  let container;
   for (i = 0; i < l; i++) {
     let displayCol = true;
     if (display) {
@@ -70,23 +71,28 @@ const formCompile = (
     }
 
     if (displayCol) {
+      container = document.createElement("div");
+      container.setAttribute("class", "input");
+
       req = (required.indexOf(display[i]) !== -1);
       lb = document.createElement("label");
       lb.setAttribute("for", display[i]);
       t = document.createTextNode(fields[display[i]].description);
       lb.appendChild(t);
       input = Widget.Input(fields[display[i]], display[i], model[display[i]], display[i], req, binding);
+
       if (nestedInput) {
         if (input) {
           lb.appendChild(input);
         }
-        fs.appendChild(lb);
+        container.appendChild(lb);
       } else {
-        fs.appendChild(lb);
+        container.appendChild(lb);
         if (input) {
-          fs.appendChild(input);
+          container.appendChild(input);
         }
       }
+      fs.appendChild(container);
     }
   }
 
