@@ -81,6 +81,8 @@ window.lunrData = {
           "function",
           "hidden",
           "json",
+          "legaci",
+          "legci",
           "markup",
           "model",
           "name",
@@ -88,6 +90,7 @@ window.lunrData = {
           "option",
           "other",
           "prepopul",
+          "render",
           "reset",
           "resetbutton",
           "schema",
@@ -232,7 +235,7 @@ window.lunrData = {
                       "docs": {
                         "AutomaticForm.html": {
                           "ref": "AutomaticForm.html",
-                          "tf": 0.847457627118644
+                          "tf": 0.7936507936507936
                         }
                       },
                       "i": {
@@ -550,7 +553,7 @@ window.lunrData = {
               "docs": {
                 "AutomaticForm.html": {
                   "ref": "AutomaticForm.html",
-                  "tf": 0.847457627118644
+                  "tf": 0.7936507936507936
                 }
               },
               "i": {
@@ -559,7 +562,7 @@ window.lunrData = {
                   "docs": {
                     "AutomaticForm.html": {
                       "ref": "AutomaticForm.html",
-                      "tf": 0.847457627118644
+                      "tf": 0.7936507936507936
                     }
                   }
                 }
@@ -576,7 +579,7 @@ window.lunrData = {
                   "docs": {
                     "AutomaticForm.html": {
                       "ref": "AutomaticForm.html",
-                      "tf": 0.847457627118644
+                      "tf": 0.7936507936507936
                     }
                   }
                 }
@@ -622,7 +625,7 @@ window.lunrData = {
                         "docs": {
                           "AutomaticForm.html": {
                             "ref": "AutomaticForm.html",
-                            "tf": 0.847457627118644
+                            "tf": 0.7936507936507936
                           }
                         }
                       }
@@ -665,7 +668,7 @@ window.lunrData = {
               "docs": {
                 "AutomaticForm.html": {
                   "ref": "AutomaticForm.html",
-                  "tf": 0.847457627118644
+                  "tf": 0.7936507936507936
                 }
               }
             }
@@ -678,7 +681,7 @@ window.lunrData = {
                 "docs": {
                   "AutomaticForm.html": {
                     "ref": "AutomaticForm.html",
-                    "tf": 2.5423728813559325
+                    "tf": 2.380952380952381
                   },
                   "AutomaticForm.html#populate": {
                     "ref": "AutomaticForm.html#populate",
@@ -702,7 +705,7 @@ window.lunrData = {
                       "docs": {
                         "AutomaticForm.html": {
                           "ref": "AutomaticForm.html",
-                          "tf": 1.694915254237288
+                          "tf": 1.5873015873015872
                         }
                       }
                     }
@@ -790,7 +793,7 @@ window.lunrData = {
                               "docs": {
                                 "AutomaticForm.html": {
                                   "ref": "AutomaticForm.html",
-                                  "tf": 0.847457627118644
+                                  "tf": 0.7936507936507936
                                 }
                               }
                             }
@@ -811,7 +814,7 @@ window.lunrData = {
                 "docs": {
                   "AutomaticForm.html": {
                     "ref": "AutomaticForm.html",
-                    "tf": 1.694915254237288
+                    "tf": 1.5873015873015872
                   }
                 }
               }
@@ -853,7 +856,7 @@ window.lunrData = {
                         "docs": {
                           "AutomaticForm.html": {
                             "ref": "AutomaticForm.html",
-                            "tf": 0.847457627118644
+                            "tf": 0.7936507936507936
                           }
                         }
                       }
@@ -922,6 +925,27 @@ window.lunrData = {
                 }
               }
             },
+            "n": {
+              "docs": {},
+              "d": {
+                "docs": {},
+                "e": {
+                  "docs": {},
+                  "r": {
+                    "docs": {
+                      "AutomaticForm.html": {
+                        "ref": "AutomaticForm.html",
+                        "tf": 0.7936507936507936
+                      },
+                      "AutomaticForm.html#render": {
+                        "ref": "AutomaticForm.html#render",
+                        "tf": 775
+                      }
+                    }
+                  }
+                }
+              }
+            },
             "s": {
               "docs": {},
               "e": {
@@ -930,7 +954,7 @@ window.lunrData = {
                   "docs": {
                     "AutomaticForm.html": {
                       "ref": "AutomaticForm.html",
-                      "tf": 1.694915254237288
+                      "tf": 1.5873015873015872
                     },
                     "AutomaticForm.html#reset": {
                       "ref": "AutomaticForm.html#reset",
@@ -951,7 +975,7 @@ window.lunrData = {
                               "docs": {
                                 "AutomaticForm.html": {
                                   "ref": "AutomaticForm.html",
-                                  "tf": 0.847457627118644
+                                  "tf": 0.7936507936507936
                                 }
                               }
                             }
@@ -972,23 +996,6 @@ window.lunrData = {
                     "AutomaticForm.html#showMessage": {
                       "ref": "AutomaticForm.html#showMessage",
                       "tf": 12.5
-                    }
-                  }
-                }
-              }
-            },
-            "n": {
-              "docs": {},
-              "d": {
-                "docs": {},
-                "e": {
-                  "docs": {},
-                  "r": {
-                    "docs": {
-                      "AutomaticForm.html#render": {
-                        "ref": "AutomaticForm.html#render",
-                        "tf": 775
-                      }
                     }
                   }
                 }
@@ -1044,7 +1051,7 @@ window.lunrData = {
                     "docs": {
                       "AutomaticForm.html": {
                         "ref": "AutomaticForm.html",
-                        "tf": 2.5423728813559325
+                        "tf": 2.380952380952381
                       },
                       "AutomaticForm.html#setSchema": {
                         "ref": "AutomaticForm.html#setSchema",
@@ -1062,7 +1069,7 @@ window.lunrData = {
               "docs": {
                 "AutomaticForm.html": {
                   "ref": "AutomaticForm.html",
-                  "tf": 2.5423728813559325
+                  "tf": 3.1746031746031744
                 },
                 "AutomaticForm.html#setURI": {
                   "ref": "AutomaticForm.html#setURI",
@@ -1124,7 +1131,7 @@ window.lunrData = {
                     "docs": {
                       "AutomaticForm.html": {
                         "ref": "AutomaticForm.html",
-                        "tf": 1.694915254237288
+                        "tf": 1.5873015873015872
                       }
                     },
                     "b": {
@@ -1141,7 +1148,7 @@ window.lunrData = {
                                 "docs": {
                                   "AutomaticForm.html": {
                                     "ref": "AutomaticForm.html",
-                                    "tf": 0.847457627118644
+                                    "tf": 0.7936507936507936
                                   }
                                 }
                               }
@@ -1166,7 +1173,7 @@ window.lunrData = {
                       "docs": {
                         "AutomaticForm.html": {
                           "ref": "AutomaticForm.html",
-                          "tf": 0.847457627118644
+                          "tf": 0.7936507936507936
                         }
                       }
                     }
@@ -1307,7 +1314,7 @@ window.lunrData = {
               "docs": {
                 "AutomaticForm.html": {
                   "ref": "AutomaticForm.html",
-                  "tf": 0.847457627118644
+                  "tf": 0.7936507936507936
                 }
               }
             }
@@ -1322,7 +1329,7 @@ window.lunrData = {
                   "docs": {
                     "AutomaticForm.html": {
                       "ref": "AutomaticForm.html",
-                      "tf": 0.847457627118644
+                      "tf": 0.7936507936507936
                     }
                   }
                 }
@@ -1348,7 +1355,7 @@ window.lunrData = {
                               "docs": {
                                 "AutomaticForm.html": {
                                   "ref": "AutomaticForm.html",
-                                  "tf": 0.847457627118644
+                                  "tf": 0.7936507936507936
                                 }
                               }
                             }
@@ -1400,6 +1407,37 @@ window.lunrData = {
                 }
               }
             }
+          },
+          "e": {
+            "docs": {},
+            "g": {
+              "docs": {},
+              "a": {
+                "docs": {},
+                "c": {
+                  "docs": {},
+                  "i": {
+                    "docs": {
+                      "AutomaticForm.html": {
+                        "ref": "AutomaticForm.html",
+                        "tf": 0.7936507936507936
+                      }
+                    }
+                  }
+                }
+              },
+              "c": {
+                "docs": {},
+                "i": {
+                  "docs": {
+                    "AutomaticForm.html": {
+                      "ref": "AutomaticForm.html",
+                      "tf": 0.7936507936507936
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "b": {
@@ -1412,7 +1450,7 @@ window.lunrData = {
                 "docs": {
                   "AutomaticForm.html": {
                     "ref": "AutomaticForm.html",
-                    "tf": 1.694915254237288
+                    "tf": 1.5873015873015872
                   },
                   "AutomaticForm.html#remove": {
                     "ref": "AutomaticForm.html#remove",
@@ -1434,7 +1472,7 @@ window.lunrData = {
                     "docs": {
                       "AutomaticForm.html": {
                         "ref": "AutomaticForm.html",
-                        "tf": 1.694915254237288
+                        "tf": 1.5873015873015872
                       }
                     }
                   }
@@ -1470,7 +1508,7 @@ window.lunrData = {
                       "docs": {
                         "AutomaticForm.html": {
                           "ref": "AutomaticForm.html",
-                          "tf": 0.847457627118644
+                          "tf": 0.7936507936507936
                         }
                       }
                     }
@@ -1524,7 +1562,7 @@ window.lunrData = {
                   "docs": {
                     "AutomaticForm.html": {
                       "ref": "AutomaticForm.html",
-                      "tf": 1.694915254237288
+                      "tf": 1.5873015873015872
                     }
                   }
                 }
@@ -1541,7 +1579,7 @@ window.lunrData = {
                   "docs": {
                     "AutomaticForm.html": {
                       "ref": "AutomaticForm.html",
-                      "tf": 0.847457627118644
+                      "tf": 0.7936507936507936
                     }
                   }
                 }
@@ -1556,7 +1594,7 @@ window.lunrData = {
                 "docs": {
                   "AutomaticForm.html": {
                     "ref": "AutomaticForm.html",
-                    "tf": 2.5423728813559325
+                    "tf": 2.380952380952381
                   },
                   "AutomaticForm.html#showMessage": {
                     "ref": "AutomaticForm.html#showMessage",
@@ -1606,7 +1644,7 @@ window.lunrData = {
                         "docs": {
                           "AutomaticForm.html": {
                             "ref": "AutomaticForm.html",
-                            "tf": 1.694915254237288
+                            "tf": 1.5873015873015872
                           },
                           "AutomaticForm.html#_retrieveSchema": {
                             "ref": "AutomaticForm.html#_retrieveSchema",
@@ -1675,7 +1713,7 @@ window.lunrData = {
                     "docs": {
                       "AutomaticForm.html": {
                         "ref": "AutomaticForm.html",
-                        "tf": 0.847457627118644
+                        "tf": 0.7936507936507936
                       }
                     }
                   }
@@ -1694,7 +1732,7 @@ window.lunrData = {
                 "docs": {
                   "AutomaticForm.html": {
                     "ref": "AutomaticForm.html",
-                    "tf": 1.694915254237288
+                    "tf": 1.5873015873015872
                   }
                 }
               }
@@ -1715,7 +1753,7 @@ window.lunrData = {
                     "docs": {
                       "AutomaticForm.html": {
                         "ref": "AutomaticForm.html",
-                        "tf": 0.847457627118644
+                        "tf": 0.7936507936507936
                       }
                     }
                   }
@@ -1733,7 +1771,7 @@ window.lunrData = {
                   "docs": {
                     "AutomaticForm.html": {
                       "ref": "AutomaticForm.html",
-                      "tf": 0.847457627118644
+                      "tf": 0.7936507936507936
                     }
                   }
                 }
@@ -1775,7 +1813,7 @@ window.lunrData = {
                     "docs": {
                       "AutomaticForm.html": {
                         "ref": "AutomaticForm.html",
-                        "tf": 0.847457627118644
+                        "tf": 0.7936507936507936
                       }
                     }
                   }
@@ -1793,7 +1831,7 @@ window.lunrData = {
                   "docs": {
                     "AutomaticForm.html": {
                       "ref": "AutomaticForm.html",
-                      "tf": 0.847457627118644
+                      "tf": 0.7936507936507936
                     }
                   }
                 }
@@ -1811,7 +1849,7 @@ window.lunrData = {
                 "docs": {
                   "AutomaticForm.html": {
                     "ref": "AutomaticForm.html",
-                    "tf": 1.694915254237288
+                    "tf": 1.5873015873015872
                   }
                 }
               }
@@ -1824,7 +1862,7 @@ window.lunrData = {
             "docs": {
               "AutomaticForm.html": {
                 "ref": "AutomaticForm.html",
-                "tf": 0.847457627118644
+                "tf": 0.7936507936507936
               }
             }
           },
@@ -1834,7 +1872,7 @@ window.lunrData = {
               "docs": {
                 "AutomaticForm.html": {
                   "ref": "AutomaticForm.html",
-                  "tf": 1.694915254237288
+                  "tf": 1.5873015873015872
                 },
                 "AutomaticForm.html#setURI": {
                   "ref": "AutomaticForm.html#setURI",
@@ -1847,7 +1885,7 @@ window.lunrData = {
             "docs": {
               "AutomaticForm.html": {
                 "ref": "AutomaticForm.html",
-                "tf": 0.847457627118644
+                "tf": 0.7936507936507936
               }
             }
           }
@@ -1864,7 +1902,7 @@ window.lunrData = {
                   "docs": {
                     "AutomaticForm.html": {
                       "ref": "AutomaticForm.html",
-                      "tf": 0.847457627118644
+                      "tf": 0.7936507936507936
                     },
                     "AutomaticForm.html#validate": {
                       "ref": "AutomaticForm.html#validate",
@@ -1887,7 +1925,7 @@ window.lunrData = {
                 "docs": {
                   "AutomaticForm.html": {
                     "ref": "AutomaticForm.html",
-                    "tf": 0.847457627118644
+                    "tf": 0.7936507936507936
                   }
                 }
               }
@@ -1945,7 +1983,7 @@ window.lunrData = {
           }
         }
       },
-      "length": 109
+      "length": 112
     },
     "corpusTokens": [
       "_retrieveschema",
@@ -1990,6 +2028,8 @@ window.lunrData = {
       "index",
       "isvalid",
       "json",
+      "legaci",
+      "legci",
       "list",
       "list:class",
       "markup",
@@ -2076,7 +2116,7 @@ window.lunrData = {
       "name": "AutomaticForm",
       "tags": "AutomaticForm",
       "summary": "",
-      "description": "A automatic form view created from a JSON Schema Supported options: schema - The JSON Schema for use with the UI and validation data - prepopulate the model data crossOrigin - Set CORS for the fetch uri - the uri to fetch data from title - the title of the form description display - Array of fields to display (others are hidden) nestedInput - add additional markup in the form (DOM elements) submitButton - set the name of the submit button (binds to a submit function) resetButton - set the name of the reset button (binds to a reset function)",
+      "description": "A automatic form view created from a JSON Schema Supported options: schema - The JSON Schema for use with the UI and validation data - prepopulate the model data crossOrigin - Set CORS for the fetch uri - the uri to fetch data from title - the title of the form description display - Array of fields to display (others are hidden) nestedInput - add additional markup in the form (DOM elements) submitButton - set the name of the submit button (binds to a submit function) resetButton - set the name of the reset button (binds to a reset function) legacy - set legcy rendering",
       "body": ""
     },
     "AutomaticForm.html#_retrieveSchema": {

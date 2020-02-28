@@ -43,23 +43,26 @@ Augmented.js Presentation Automatic Form View Module
     -   [\_retrieveSchema](#_retrieveschema-10)
         -   [Parameters](#parameters-11)
         -   [Properties](#properties-10)
-    -   [setURI](#seturi)
+    -   [\_retrieveSchema](#_retrieveschema-11)
         -   [Parameters](#parameters-12)
-    -   [setSchema](#setschema)
+        -   [Properties](#properties-11)
+    -   [setURI](#seturi)
         -   [Parameters](#parameters-13)
-    -   [showProgressBar](#showprogressbar)
+    -   [setSchema](#setschema)
         -   [Parameters](#parameters-14)
-    -   [showMessage](#showmessage)
+    -   [showProgressBar](#showprogressbar)
         -   [Parameters](#parameters-15)
+    -   [showMessage](#showmessage)
+        -   [Parameters](#parameters-16)
     -   [validate](#validate)
     -   [isValid](#isvalid)
     -   [render](#render)
     -   [reset](#reset)
     -   [populate](#populate)
-        -   [Parameters](#parameters-16)
+        -   [Parameters](#parameters-17)
     -   [remove](#remove)
 -   [formCompile](#formcompile)
-    -   [Parameters](#parameters-17)
+    -   [Parameters](#parameters-18)
 
 ## AutomaticForm
 
@@ -81,6 +84,7 @@ Supported options:
 <li>nestedInput - add additional markup in the form (DOM elements)</li>
 <li>submitButton - set the name of the submit button (binds to a submit function)</li>
 <li>resetButton - set the name of the reset button (binds to a reset function)</li>
+<li>legacy - set legcy rendering</li>
 </ul>
 
 ### Parameters
@@ -211,6 +215,16 @@ The description property
 
 -   `resetButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the reset button (defaults to null)
 
+### \_retrieveSchema
+
+#### Parameters
+
+-   `uri`  
+
+#### Properties
+
+-   `legacy` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** set legacy rendering
+
 ### setURI
 
 Sets the URI
@@ -302,5 +316,6 @@ Remove the form and all binds
 -   `resetButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the reset button
 -   `style` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of styles
 -   `tagName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of tag
+-   `legacy` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set old markup style (optional, default `false`)
 
 Returns **Dom** Dom tree of form elements

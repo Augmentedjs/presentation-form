@@ -14,6 +14,7 @@ import { Widget } from "presentation-widget";
  * @param {string} resetButton  Name of the reset button
  * @param {string} style Name of styles
  * @param {string} tagName Name of tag
+ * @param {boolean} legacy Set old markup style
  * @returns {Dom} Dom tree of form elements
  */
 const formCompile = (
@@ -28,7 +29,8 @@ const formCompile = (
                       submitButton,
                       resetButton,
                       style,
-                      tagName
+                      tagName,
+                      legacy = false
                     ) => {
   const form = document.createElement(tagName),
         fs = document.createElement("fieldset"),
@@ -86,11 +88,16 @@ const formCompile = (
           lb.appendChild(input);
         }
         container.appendChild(lb);
-      } else {
+      } else if (legacy) {
         container.appendChild(lb);
         if (input) {
           container.appendChild(input);
         }
+      } else {
+        if (input) {
+          container.appendChild(input);
+        }
+        container.appendChild(lb);
       }
       fs.appendChild(container);
     }

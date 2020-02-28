@@ -1,6 +1,6 @@
 {
   "name": "presentation-form",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "The Augmented.js Next - Presentation Form View Module.",
   "main": "dist/presentation-form.js",
   "scripts": {
@@ -35,7 +35,7 @@
     "foodoc": "0.0.9",
     "jsdoc": "^3.6.3",
     "jsdom": "^16.2.0",
-    "mocha": "^7.0.1",
+    "mocha": "^7.1.0",
     "mocha-jsdom": "^2.0.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"

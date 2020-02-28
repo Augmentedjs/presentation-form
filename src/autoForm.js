@@ -22,6 +22,7 @@ import formatValidationMessages from "./functions/messages.js";
  * <li>nestedInput - add additional markup in the form (DOM elements)</li>
  * <li>submitButton - set the name of the submit button (binds to a submit function)</li>
  * <li>resetButton - set the name of the reset button (binds to a reset function)</li>
+ * <li>legacy - set legcy rendering</li>
  * </ul>
  * @param {Object} options Options for the class
  * @extends DecoratorView
@@ -46,6 +47,11 @@ class AutomaticForm extends DecoratorView {
     this.nestedInput = false;
     this.submitButton = false;
     this.resetButton = false;
+    this.legacy = false;
+
+    if (options.legacy) {
+      this.legacy = options.legacy;
+    }
 
     if (this.model && options && options.clearForm) {
       this.model.clear();
@@ -211,6 +217,10 @@ class AutomaticForm extends DecoratorView {
    * @property {string} resetButton The name of the reset button (defaults to null)
    */
 
+  /**
+   * @property {boolean} legacy set legacy rendering
+   */
+
   _retrieveSchema(uri) {
     const that = this;
     return request({
@@ -348,7 +358,8 @@ class AutomaticForm extends DecoratorView {
           this.submitButton,
           this.resetButton,
           this.style,
-          this.tagName
+          this.tagName,
+          this.legacy
         );
         if (form) {
           e.appendChild(form);
