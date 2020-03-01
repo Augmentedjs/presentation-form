@@ -65,10 +65,6 @@ class AutomaticForm extends DecoratorView {
       this.model = new Model();
     }
 
-    if (options.data) {
-      this.model.set(data);
-    }
-
     if (options.submitButton) {
       this.submitButton = options.submitButton;
     }
