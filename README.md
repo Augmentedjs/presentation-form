@@ -79,12 +79,13 @@ Supported options:
 <li>crossOrigin - Set CORS for the fetch</li>
 <li>uri - the uri to fetch data from </li>
 <li>title - the title of the form</li>
-<li>description</li>
+<li>description - set a tooltip for the form</li>
 <li>display - Array of fields to display (others are hidden)</li>
-<li>nestedInput - add additional markup in the form (DOM elements)</li>
-<li>submitButton - set the name of the submit button (binds to a submit function)</li>
-<li>resetButton - set the name of the reset button (binds to a reset function)</li>
-<li>legacy - set legcy rendering</li>
+<li>nestedInput - label wraps the input</li>
+<li>submitButton - set the name of the submit button (binds to a submit method)</li>
+<li>resetButton - set the name of the reset button (binds to a reset method)</li>
+<li>legacy - set legacy rendering (older look and feel)</li>
+<li>large - render large input fields</li>
 </ul>
 
 ### Parameters
@@ -317,5 +318,6 @@ Remove the form and all binds
 -   `style` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of styles
 -   `tagName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of tag
 -   `legacy` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set old markup style (optional, default `false`)
+-   `large`   (optional, default `false`)
 
 Returns **Dom** Dom tree of form elements

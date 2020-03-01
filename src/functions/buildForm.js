@@ -30,7 +30,8 @@ const formCompile = (
                       resetButton,
                       style,
                       tagName,
-                      legacy = false
+                      legacy = false,
+                      large = false
                     ) => {
   const form = document.createElement(tagName),
         fs = document.createElement("fieldset"),
@@ -74,8 +75,11 @@ const formCompile = (
 
     if (displayCol) {
       container = document.createElement("div");
-      container.setAttribute("class", "input");
-
+      let css = "input";
+      if (large) {
+        css += " large";
+      }
+      container.setAttribute("class", css);
       req = (required.indexOf(display[i]) !== -1);
       lb = document.createElement("label");
       lb.setAttribute("for", display[i]);

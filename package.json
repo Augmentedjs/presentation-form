@@ -1,6 +1,6 @@
 {
   "name": "presentation-form",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "The Augmented.js Next - Presentation Form View Module.",
   "main": "dist/presentation-form.js",
   "scripts": {
