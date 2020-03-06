@@ -80,7 +80,7 @@ const formCompile = (
       if (large) {
         css += " large";
       }
-      container.setAttribute("class", css);
+
       req = (required.indexOf(display[i]) !== -1);
       lb = document.createElement("label");
       lb.setAttribute("for", display[i]);
@@ -89,9 +89,12 @@ const formCompile = (
       input = Widget.Input(fields[display[i]], display[i], model[display[i]], display[i], req, binding);
 
       /* set the css class to 'select' for better styles */
-      if (input.tagName === "select" ) {
+      if (input.tagName === "SELECT" ) {
         css = "select";
       }
+
+      container.setAttribute("class", css);
+
       input.setAttribute("placeholder", display[i]);
       if (nestedInput) {
         if (input) {
