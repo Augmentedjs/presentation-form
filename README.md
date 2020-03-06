@@ -83,6 +83,7 @@ Supported options:
 <li>display - Array of fields to display (others are hidden)</li>
 <li>nestedInput - label wraps the input</li>
 <li>submitButton - set the name of the submit button (binds to a submit method)</li>
+<li>submitPrimary - set the submit button to primary (default)</li>
 <li>resetButton - set the name of the reset button (binds to a reset method)</li>
 <li>legacy - set legacy rendering (older look and feel)</li>
 <li>large - render large input fields</li>
@@ -319,5 +320,6 @@ Remove the form and all binds
 -   `tagName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of tag
 -   `legacy` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set old markup style (optional, default `false`)
 -   `large`   (optional, default `false`)
+-   `submitPrimary` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set submit to primary
 
 Returns **Dom** Dom tree of form elements

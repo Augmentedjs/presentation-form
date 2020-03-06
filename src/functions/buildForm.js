@@ -15,6 +15,7 @@ import { Widget } from "presentation-widget";
  * @param {string} style Name of styles
  * @param {string} tagName Name of tag
  * @param {boolean} legacy Set old markup style
+ * @param {boolean} submitPrimary Set submit to primary
  * @returns {Dom} Dom tree of form elements
  */
 const formCompile = (
@@ -94,7 +95,7 @@ const formCompile = (
       if (large) {
         css += " large";
       }
-      
+
       container.setAttribute("class", css);
 
       input.setAttribute("placeholder", display[i]);
@@ -133,6 +134,9 @@ const formCompile = (
     submit.setAttribute("type", "submit");
     submit.setAttribute(`data-${binding}`, "submit");
     submit.setAttribute("data-click", "submit");
+    if (submitPrimary) {
+      submit.setAttribute("class", "primary");
+    }
     const t = document.createTextNode(submitButton);
     submit.appendChild(t);
     form.appendChild(submit);

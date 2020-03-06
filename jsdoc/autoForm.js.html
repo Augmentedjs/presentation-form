@@ -125,6 +125,7 @@ import formatValidationMessages from "./functions/messages.js";
  * &lt;li>display - Array of fields to display (others are hidden)&lt;/li>
  * &lt;li>nestedInput - label wraps the input&lt;/li>
  * &lt;li>submitButton - set the name of the submit button (binds to a submit method)&lt;/li>
+ * &lt;li>submitPrimary - set the submit button to primary (default)&lt;/li>
  * &lt;li>resetButton - set the name of the reset button (binds to a reset method)&lt;/li>
  * &lt;li>legacy - set legacy rendering (older look and feel)&lt;/li>
  * &lt;li>large - render large input fields&lt;/li>
@@ -154,6 +155,7 @@ class AutomaticForm extends DecoratorView {
     this.resetButton = false;
     this.legacy = false;
     this.large = false;
+    this.submitPrimary = true;
 
     if (options.legacy) {
       this.legacy = options.legacy;
@@ -171,6 +173,10 @@ class AutomaticForm extends DecoratorView {
 
     if (options.submitButton) {
       this.submitButton = options.submitButton;
+    }
+
+    if (options.submitPrimary) {
+      this.submitPrimary = options.submitPrimary;
     }
 
     if (options.resetButton) {
@@ -470,7 +476,8 @@ class AutomaticForm extends DecoratorView {
           this.style,
           this.tagName,
           this.legacy,
-          this.large
+          this.large,
+          this.submitPrimary
         );
         if (form) {
           e.appendChild(form);

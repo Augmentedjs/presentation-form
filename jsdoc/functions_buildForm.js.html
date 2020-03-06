@@ -119,6 +119,7 @@
  * @param {string} style Name of styles
  * @param {string} tagName Name of tag
  * @param {boolean} legacy Set old markup style
+ * @param {boolean} submitPrimary Set submit to primary
  * @returns {Dom} Dom tree of form elements
  */
 const formCompile = (
@@ -181,10 +182,8 @@ const formCompile = (
       container = document.createElement("div");
       let css = "input";
 
-      if (large) {
-        css += " large";
-      }
-      container.setAttribute("class", css);
+
+
       req = (required.indexOf(display[i]) !== -1);
       lb = document.createElement("label");
       lb.setAttribute("for", display[i]);
@@ -193,9 +192,16 @@ const formCompile = (
       input = Widget.Input(fields[display[i]], display[i], model[display[i]], display[i], req, binding);
 
       /* set the css class to 'select' for better styles */
-      if (input.tagName === "select" ) {
+      if (input.tagName === "SELECT" ) {
         css = "select";
       }
+
+      if (large) {
+        css += " large";
+      }
+
+      container.setAttribute("class", css);
+
       input.setAttribute("placeholder", display[i]);
       if (nestedInput) {
         if (input) {
@@ -232,6 +238,9 @@ const formCompile = (
     submit.setAttribute("type", "submit");
     submit.setAttribute(`data-${binding}`, "submit");
     submit.setAttribute("data-click", "submit");
+    if (submitPrimary) {
+      submit.setAttribute("class", "primary");
+    }
     const t = document.createTextNode(submitButton);
     submit.appendChild(t);
     form.appendChild(submit);
