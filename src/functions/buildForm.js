@@ -32,7 +32,8 @@ const formCompile = (
                       style,
                       tagName,
                       legacy = false,
-                      large = false
+                      large = false,
+                      submitPrimary = true
                     ) => {
   const form = document.createElement(tagName),
         fs = document.createElement("fieldset"),
