@@ -77,9 +77,7 @@ const formCompile = (
       container = document.createElement("div");
       let css = "input";
 
-      if (large) {
-        css += " large";
-      }
+
 
       req = (required.indexOf(display[i]) !== -1);
       lb = document.createElement("label");
@@ -93,6 +91,10 @@ const formCompile = (
         css = "select";
       }
 
+      if (large) {
+        css += " large";
+      }
+      
       container.setAttribute("class", css);
 
       input.setAttribute("placeholder", display[i]);
