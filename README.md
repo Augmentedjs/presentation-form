@@ -320,6 +320,6 @@ Remove the form and all binds
 -   `tagName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of tag
 -   `legacy` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set old markup style (optional, default `false`)
 -   `large`   (optional, default `false`)
--   `submitPrimary` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set submit to primary
+-   `submitPrimary` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set submit to primary (optional, default `true`)
 
 Returns **Dom** Dom tree of form elements
