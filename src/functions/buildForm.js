@@ -76,6 +76,7 @@ const formCompile = (
     if (displayCol) {
       container = document.createElement("div");
       let css = "input";
+
       if (large) {
         css += " large";
       }
@@ -86,6 +87,11 @@ const formCompile = (
       t = document.createTextNode(fields[display[i]].description);
       lb.appendChild(t);
       input = Widget.Input(fields[display[i]], display[i], model[display[i]], display[i], req, binding);
+
+      /* set the css class to 'select' for better styles */
+      if (input.tagName === "select" ) {
+        css = "select";
+      }
       input.setAttribute("placeholder", display[i]);
       if (nestedInput) {
         if (input) {
