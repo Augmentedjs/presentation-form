@@ -28,17 +28,21 @@ describe("Given Augmented Automatic Form", () => {
 				"Email" : {
 					"description": "The email of the user",
 					"type" : "string"
+				},
+				"Active" : {
+					"description": "Is Active",
+					"type" : "boolean"
 				}
 			},
 			"required": ["ID", "Name"]
 		};
 
-		const data = { "Name": "Bob", "ID": 123, "Email": "bob@augmentedjs.org" };
+		const data = { "Name": "Bob", "ID": 123, "Email": "bob@augmentedjs.org", "Active": true };
 
 		let f;
 
 		beforeEach(() => {
-			f = new Form.AutomaticForm({schema: schema});
+			f = new Form.AutomaticForm({ "el": "#sandbox", "schema": schema });
 		});
 
 		afterEach(() => {
@@ -79,6 +83,15 @@ describe("Given Augmented Automatic Form", () => {
 			const m = f.validate();
 			expect(m).to.not.be.undefined;
 			expect(f.isValid()).to.be.false;
+		});
+
+		it("can render", async () => {
+			await f.populate(data);
+			await f.render();
+			const el = document.querySelector(f.el);
+			const html = (el) ? el.innerHTML : null;
+			console.debug(html);
+			expect(html).to.not.be.undefined;
 		});
 	});
 });

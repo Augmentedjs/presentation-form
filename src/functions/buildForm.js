@@ -79,8 +79,6 @@ const formCompile = (
       container = document.createElement("div");
       let css = "input";
 
-
-
       req = (required.indexOf(display[i]) !== -1);
       lb = document.createElement("label");
       lb.setAttribute("for", display[i]);
@@ -91,6 +89,8 @@ const formCompile = (
       /* set the css class to 'select' for better styles */
       if (input.tagName === "SELECT" ) {
         css = "select";
+      } else if (input.type === "checkbox") {
+        css = "checkbox";
       }
 
       if (large) {
