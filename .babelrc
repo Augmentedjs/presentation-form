@@ -1,10 +1,13 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
-        "browsers": ["safari 12", "firefox > 70", "chrome > 70"]
+        "browsers": ["firefox >= 70", "chrome >= 76"]
       },
       "debug": true
     }]
+  ],
+  "plugins": [
+    "babel-plugin-remove-template-literals-whitespace"
   ]
 }
