@@ -1,6 +1,5 @@
 import { isObject } from "next-core-utilities";
 import { DecoratorView } from "presentation-decorator";
-import { request } from "presentation-request";
 import { Model } from "presentation-models";
 import Dom from "presentation-dom";
 import formCompile from "./functions/buildForm.js";
@@ -233,25 +232,16 @@ class AutomaticForm extends DecoratorView {
    * @property {boolean} legacy set legacy rendering
    */
 
-  _retrieveSchema(uri) {
-    const that = this;
-    return request({
-      url: uri,
-      contentType: "application/json",
-      dataType: "json",
-      success: (data, status) => {
-        let schema = null;
-        if (typeof data === "string") {
-          schema = JSON.parse(data);
-        } else {
-          schema = data;
-        }
-        that.initialize({ "schema": schema });
-      },
-      error: (data, status) => {
-        console.error(`${this.name} Failed to fetch schema!`, status);
-      }
-    });
+  async _retrieveSchema(uri) {
+   try {
+     const response = await fetch(uri);
+     const schema = await response.json();
+     const options = { "schema": schema };
+     return this.initialize(options);
+   } catch (e) {
+     this.showMessage(`${this.name} Failed to fetch schema!! ${e}`);
+     return null;
+   }
   };
 
   /**
