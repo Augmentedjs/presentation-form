@@ -1,7 +1,7 @@
 import { isObject } from "next-core-utilities";
 import { DecoratorView } from "presentation-decorator";
 import { Model } from "presentation-models";
-import Dom from "presentation-dom";
+import { Dom } from "presentation-dom";
 import formCompile from "./functions/buildForm.js";
 import formatValidationMessages from "./functions/messages.js";
 

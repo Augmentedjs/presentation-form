@@ -1,6 +1,6 @@
 {
   "name": "presentation-form",
-  "version": "3.5.4",
+  "version": "3.5.5",
   "description": "The Augmented.js Next - Presentation Form View Module.",
   "main": "dist/presentation-form.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "documentation": "^13.0.2",
     "foodoc": "0.0.9",
     "jsdoc": "^3.6.4",
-    "jsdom": "^16.2.2",
+    "jsdom": "^16.3.0",
     "mocha": "^8.0.1",
     "mocha-jsdom": "^2.0.0",
     "webpack": "^4.43.0",
@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "next-core-utilities": "^2.9.0",
-    "presentation-decorator": "^3.1.4",
-    "presentation-dom": "^2.8.2",
+    "presentation-decorator": "^3.1.5",
+    "presentation-dom": "^3.0.0",
     "presentation-models": "^3.1.5",
     "presentation-widget": "^2.5.6"
   },
