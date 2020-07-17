@@ -1,6 +1,6 @@
 {
   "name": "presentation-form",
-  "version": "3.5.5",
+  "version": "3.5.6",
   "description": "The Augmented.js Next - Presentation Form View Module.",
   "main": "dist/presentation-form.js",
   "scripts": {
@@ -27,9 +27,9 @@
   "author": "Bob Warren <jedi.master@augmentedjs.com> (http://www.augmentedjs.com)",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
-    "@babel/register": "^7.10.4",
+    "@babel/register": "^7.10.5",
     "babel-loader": "^8.1.0",
     "babel-plugin-remove-template-literals-whitespace": "^1.0.3",
     "chai": "^4.2.0",
@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "next-core-utilities": "^2.9.0",
-    "presentation-decorator": "^3.1.5",
-    "presentation-dom": "^3.0.0",
+    "presentation-decorator": "^3.2.0",
+    "presentation-dom": "^3.0.3",
     "presentation-models": "^3.1.5",
     "presentation-widget": "^2.5.6"
   },
