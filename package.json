@@ -45,10 +45,10 @@
   },
   "dependencies": {
     "next-core-utilities": "^2.9.0",
-    "presentation-decorator": "^3.2.2",
+    "presentation-decorator": "^3.2.3",
     "presentation-dom": "^3.0.3",
     "presentation-models": "^3.1.6",
-    "presentation-widget": "^2.5.6"
+    "presentation-widget": "^3.0.0"
   },
   "bugs": {
     "url": "https://github.com/Augmentedjs/presentation-form/issues"
