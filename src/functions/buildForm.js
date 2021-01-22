@@ -107,7 +107,7 @@ const formCompile = (
 
       input.setAttribute("placeholder", display[i]);
 
-      if (description) {
+      if (fields[display[i]].description) {
         input.setAttribute("title", fields[display[i]].description);
       }
       
