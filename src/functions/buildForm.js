@@ -70,19 +70,25 @@ const formCompile = (
 
   let container;
   for (i = 0; i < l; i++) {
-    let displayCol = true;
+    let displayField = true;
     if (display) {
-      displayCol = (keys.indexOf(display[i]) !== -1) ? true : false;
+      displayField = (keys.indexOf(display[i]) !== -1) ? true : false;
     }
 
-    if (displayCol) {
+    if (displayField) {
       container = document.createElement("div");
       let css = "input";
+      // console.debug(fields[display[i]]);
 
       req = (required.indexOf(display[i]) !== -1);
       lb = document.createElement("label");
       lb.setAttribute("for", display[i]);
-      t = document.createTextNode(fields[display[i]].description);
+      if (fields[display[i]].title) {
+        t = document.createTextNode(fields[display[i]].title);
+      } else {
+        t = document.createTextNode(fields[display[i]].description);
+      }
+      
       lb.appendChild(t);
       input = Widget.Input(fields[display[i]], display[i], model[display[i]], display[i], req, binding);
 
@@ -100,6 +106,11 @@ const formCompile = (
       container.setAttribute("class", css);
 
       input.setAttribute("placeholder", display[i]);
+
+      if (fields[display[i]].description) {
+        input.setAttribute("title", fields[display[i]].description);
+      }
+      
       if (nestedInput) {
         if (input) {
           lb.appendChild(input);

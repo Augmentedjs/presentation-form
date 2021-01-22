@@ -8,7 +8,7 @@ global.navigator = {
   userAgent: 'node.js'
 };
 
-global.Form = require("../src/index.js");
+global.Form = require("../temp/presentation-form.js");
 
 const chai = require("chai");
 global.chai = chai;

@@ -11,3 +11,4 @@ jsdoc
 .babelrc
 jsdoc.conf.json
 public
+temp
