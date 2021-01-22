@@ -61,8 +61,10 @@ Augmented.js Presentation Automatic Form View Module
     -   [populate](#populate)
         -   [Parameters](#parameters-17)
     -   [remove](#remove)
--   [formCompile](#formcompile)
+-   [isObject](#isobject)
     -   [Parameters](#parameters-18)
+-   [formCompile](#formcompile)
+    -   [Parameters](#parameters-19)
 
 ## AutomaticForm
 
@@ -301,6 +303,16 @@ Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 ### remove
 
 Remove the form and all binds
+
+## isObject
+
+isObject
+
+### Parameters
+
+-   `obj` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** The input object
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Returns true of the param is an object
 
 ## formCompile
 

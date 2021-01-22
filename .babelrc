@@ -9,5 +9,28 @@
   ],
   "plugins": [
     "babel-plugin-remove-template-literals-whitespace"
-  ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        ["transform-remove-console", { "exclude": [ "error", "warn"] }]
+      ]
+    },
+    "test": {
+      "plugins": [
+        ["transform-remove-console", { "exclude": [ "info", "error", "warn"] }]
+      ],
+      "presets": [
+        ["@babel/preset-env", {
+          "targets": {
+            "node": "12"
+          },
+          "debug": true,
+          "modules": false
+        },
+        "@babel/preset-react"
+        ]
+      ]
+    }
+  }
 }

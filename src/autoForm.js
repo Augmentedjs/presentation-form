@@ -1,4 +1,4 @@
-import { isObject } from "next-core-utilities";
+import isObject from "../node_modules/next-core-utilities/src/isObject.js";
 import { DecoratorView } from "presentation-decorator";
 import { Model } from "presentation-models";
 import { Dom } from "presentation-dom";
