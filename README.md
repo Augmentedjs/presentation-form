@@ -8,70 +8,67 @@ Augmented.js Presentation Automatic Form View Module
 
 ### Table of Contents
 
--   [AutomaticForm](#automaticform)
-    -   [Parameters](#parameters)
-    -   [\_retrieveSchema](#_retrieveschema)
-        -   [Parameters](#parameters-1)
-        -   [Properties](#properties)
-    -   [\_retrieveSchema](#_retrieveschema-1)
-        -   [Parameters](#parameters-2)
-        -   [Properties](#properties-1)
-    -   [\_retrieveSchema](#_retrieveschema-2)
-        -   [Parameters](#parameters-3)
-        -   [Properties](#properties-2)
-    -   [\_retrieveSchema](#_retrieveschema-3)
-        -   [Parameters](#parameters-4)
-        -   [Properties](#properties-3)
-    -   [\_retrieveSchema](#_retrieveschema-4)
-        -   [Parameters](#parameters-5)
-        -   [Properties](#properties-4)
-    -   [\_retrieveSchema](#_retrieveschema-5)
-        -   [Parameters](#parameters-6)
-        -   [Properties](#properties-5)
-    -   [\_retrieveSchema](#_retrieveschema-6)
-        -   [Parameters](#parameters-7)
-        -   [Properties](#properties-6)
-    -   [\_retrieveSchema](#_retrieveschema-7)
-        -   [Parameters](#parameters-8)
-        -   [Properties](#properties-7)
-    -   [\_retrieveSchema](#_retrieveschema-8)
-        -   [Parameters](#parameters-9)
-        -   [Properties](#properties-8)
-    -   [\_retrieveSchema](#_retrieveschema-9)
-        -   [Parameters](#parameters-10)
-        -   [Properties](#properties-9)
-    -   [\_retrieveSchema](#_retrieveschema-10)
-        -   [Parameters](#parameters-11)
-        -   [Properties](#properties-10)
-    -   [\_retrieveSchema](#_retrieveschema-11)
-        -   [Parameters](#parameters-12)
-        -   [Properties](#properties-11)
-    -   [setURI](#seturi)
-        -   [Parameters](#parameters-13)
-    -   [setSchema](#setschema)
-        -   [Parameters](#parameters-14)
-    -   [showProgressBar](#showprogressbar)
-        -   [Parameters](#parameters-15)
-    -   [showMessage](#showmessage)
-        -   [Parameters](#parameters-16)
-    -   [validate](#validate)
-    -   [isValid](#isvalid)
-    -   [render](#render)
-    -   [reset](#reset)
-    -   [populate](#populate)
-        -   [Parameters](#parameters-17)
-    -   [remove](#remove)
--   [isObject](#isobject)
-    -   [Parameters](#parameters-18)
--   [formCompile](#formcompile)
-    -   [Parameters](#parameters-19)
+*   [AutomaticForm](#automaticform)
+    *   [Parameters](#parameters)
+    *   [\_retrieveSchema](#\_retrieveschema)
+        *   [Parameters](#parameters-1)
+        *   [Properties](#properties)
+    *   [\_retrieveSchema](#\_retrieveschema-1)
+        *   [Parameters](#parameters-2)
+        *   [Properties](#properties-1)
+    *   [\_retrieveSchema](#\_retrieveschema-2)
+        *   [Parameters](#parameters-3)
+        *   [Properties](#properties-2)
+    *   [\_retrieveSchema](#\_retrieveschema-3)
+        *   [Parameters](#parameters-4)
+        *   [Properties](#properties-3)
+    *   [\_retrieveSchema](#\_retrieveschema-4)
+        *   [Parameters](#parameters-5)
+        *   [Properties](#properties-4)
+    *   [\_retrieveSchema](#\_retrieveschema-5)
+        *   [Parameters](#parameters-6)
+        *   [Properties](#properties-5)
+    *   [\_retrieveSchema](#\_retrieveschema-6)
+        *   [Parameters](#parameters-7)
+        *   [Properties](#properties-6)
+    *   [\_retrieveSchema](#\_retrieveschema-7)
+        *   [Parameters](#parameters-8)
+        *   [Properties](#properties-7)
+    *   [\_retrieveSchema](#\_retrieveschema-8)
+        *   [Parameters](#parameters-9)
+        *   [Properties](#properties-8)
+    *   [\_retrieveSchema](#\_retrieveschema-9)
+        *   [Parameters](#parameters-10)
+        *   [Properties](#properties-9)
+    *   [\_retrieveSchema](#\_retrieveschema-10)
+        *   [Parameters](#parameters-11)
+        *   [Properties](#properties-10)
+    *   [\_retrieveSchema](#\_retrieveschema-11)
+        *   [Parameters](#parameters-12)
+        *   [Properties](#properties-11)
+    *   [setURI](#seturi)
+        *   [Parameters](#parameters-13)
+    *   [setSchema](#setschema)
+        *   [Parameters](#parameters-14)
+    *   [showProgressBar](#showprogressbar)
+        *   [Parameters](#parameters-15)
+    *   [showMessage](#showmessage)
+        *   [Parameters](#parameters-16)
+    *   [validate](#validate)
+    *   [isValid](#isvalid)
+    *   [render](#render)
+    *   [reset](#reset)
+    *   [populate](#populate)
+        *   [Parameters](#parameters-17)
+    *   [remove](#remove)
+*   [formCompile](#formcompile)
+    *   [Parameters](#parameters-18)
 
 ## AutomaticForm
 
 **Extends DecoratorView**
 
-A automatic form view created from a JSON Schema
-<br/>
+A automatic form view created from a JSON Schema <br/>
 
 Supported options:
 
@@ -93,7 +90,7 @@ Supported options:
 
 ### Parameters
 
--   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options for the class
+*   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options for the class
 
 ### \_retrieveSchema
 
@@ -101,11 +98,11 @@ The crossOrigin property - enables cross origin fetch
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `crossOrigin` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** The crossOrigin property
+*   `crossOrigin` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** The crossOrigin property
 
 ### \_retrieveSchema
 
@@ -113,11 +110,11 @@ The URI property
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `uri` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The URI property
+*   `uri` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The URI property
 
 ### \_retrieveSchema
 
@@ -125,11 +122,11 @@ The model property
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `model` **Model** The model property
+*   `model` **Model** The model property
 
 ### \_retrieveSchema
 
@@ -137,11 +134,11 @@ The initialized property
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `isInitalized` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** The initialized property
+*   `isInitalized` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** The initialized property
 
 ### \_retrieveSchema
 
@@ -149,11 +146,11 @@ The title property
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `title` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The title of the form
+*   `title` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The title of the form
 
 ### \_retrieveSchema
 
@@ -161,11 +158,11 @@ The name property
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the form
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the form
 
 ### \_retrieveSchema
 
@@ -173,61 +170,61 @@ The description property
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `description` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The description of the form
+*   `description` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The description of the form
 
 ### \_retrieveSchema
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `display` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Fields to display - null will display all
+*   `display` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Fields to display - null will display all
 
 ### \_retrieveSchema
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `nestedInput` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Sets the input field as a chile of the label (defaults to false)
+*   `nestedInput` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Sets the input field as a chile of the label (defaults to false)
 
 ### \_retrieveSchema
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `submitButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the submit button (defaults to null)
+*   `submitButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the submit button (defaults to null)
 
 ### \_retrieveSchema
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `resetButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the reset button (defaults to null)
+*   `resetButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the reset button (defaults to null)
 
 ### \_retrieveSchema
 
 #### Parameters
 
--   `uri`  
+*   `uri`  
 
 #### Properties
 
--   `legacy` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** set legacy rendering
+*   `legacy` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** set legacy rendering
 
 ### setURI
 
@@ -235,12 +232,11 @@ Sets the URI
 
 #### Parameters
 
--   `uri` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The URI
+*   `uri` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The URI
 
 **Meta**
 
--   **deprecated**: Use property
-
+*   **deprecated**: Use property
 
 ### setSchema
 
@@ -248,7 +244,7 @@ Sets the schema
 
 #### Parameters
 
--   `schema` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** The JSON schema of the dataset
+*   `schema` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** The JSON schema of the dataset
 
 ### showProgressBar
 
@@ -256,7 +252,7 @@ Enable/Disable the progress bar
 
 #### Parameters
 
--   `show` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Show or Hide the progress bar
+*   `show` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Show or Hide the progress bar
 
 ### showMessage
 
@@ -264,7 +260,7 @@ Show a message related to the form
 
 #### Parameters
 
--   `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Some message to display
+*   `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Some message to display
 
 ### validate
 
@@ -296,7 +292,7 @@ Populate the form
 
 #### Parameters
 
--   `data` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Data to fill in
+*   `data` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Data to fill in
 
 Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Returns the view context ('this')
 
@@ -304,34 +300,24 @@ Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 Remove the form and all binds
 
-## isObject
-
-isObject
-
-### Parameters
-
--   `obj` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** The input object
-
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Returns true of the param is an object
-
 ## formCompile
 
 ### Parameters
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the form
--   `description` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** A description
--   `fields` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Object of fields with types (see JSON scheme properties format)
--   `model` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Data for the fields by key
--   `required` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Array of requires fields
--   `binding` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the binding function
--   `display` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Array of fields to display
--   `nestedInput` **Dom** Dom tree of nested markup
--   `submitButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the Submit button
--   `resetButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the reset button
--   `style` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of styles
--   `tagName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of tag
--   `legacy` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set old markup style (optional, default `false`)
--   `large`   (optional, default `false`)
--   `submitPrimary` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set submit to primary (optional, default `true`)
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the form
+*   `description` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** A description
+*   `fields` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Object of fields with types (see JSON scheme properties format)
+*   `model` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Data for the fields by key
+*   `required` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Array of requires fields
+*   `binding` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the binding function
+*   `display` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** Array of fields to display
+*   `nestedInput` **Dom** Dom tree of nested markup
+*   `submitButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the Submit button
+*   `resetButton` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of the reset button
+*   `style` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of styles
+*   `tagName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of tag
+*   `legacy` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set old markup style (optional, default `false`)
+*   `large`   (optional, default `false`)
+*   `submitPrimary` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set submit to primary (optional, default `true`)
 
 Returns **Dom** Dom tree of form elements
